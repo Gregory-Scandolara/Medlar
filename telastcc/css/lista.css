@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+body {
+    background-color: #b9d8ff;
+    background-size: cover;
+    background-position-x: 700px;
+    background-position-y: 50px;
+   
+}
+textarea:focus, input:focus {
+    outline: none;
+}
+/* botaozinho */
+a:hover {
+    color: royalblue;
+
+}
+#lista-conteiner {
+    background-color: #72cdfe;
+    height: 550px;
+    width: 850px;
+    margin-left: auto;
+    margin-right: 200px;
+    padding: 20px 30px;
+    overflow:auto; 
+    margin-top: 10px;
+    border-radius: 10px;
+    
+}
+a {
+font-weight: bold;
+cursor: pointer;
+}
+td, th {
+    border-width: medium;
+    border-style: solid;
+    border-color: rgb(57, 166, 233);
+    /* border-radius: 10px; */
+    text-align: left;
+    font-size: x-large;
+
+}
+#table {
+    border-radius: 10px;
+}
+
+/* tamanho do nome dos idosos */
+td.texto, th.texto {
+    width: 600px;
+    height: 30px;
+    padding-left: 15px;
+}
+
+td.text-center, th.text-center {
+    width: 50px;
+    height: 40px;
+    
+}
+
+td.id, th.id {
+    width: 50px;
+    height: 40px;
+}
+thead{
+    background-color: #2ca0ff;
+}
+.texto {
+    width: 30px;
+}
+/* tamanho dos icones da lista */
+.text-center i {
+    font-size: 25px;
+    margin-top: 7px;
+}
+
+
+.nome, .idoso {
+    /* font-size: 30px; */
+    border-bottom: 1px solid rgb(57, 166, 233);
+    /* border-top: 1px solid rgb(57, 166, 233); */
+    /* border-right: 1px solid rgb(57, 166, 233);
+    border-left: 1px solid rgb(57, 166, 233); */
+    width: 750px;
+    
+    text-align: left;
+    /* padding-top: 5px; */
+    padding-left: 15px;
+    /* border-radius: 10px; */
+    border-width: 3px;
+    margin-left: 3px;
+    display: grid;
+}
+.nome {
+    /* border-top: 1px solid rgb(57, 166, 233); */
+    border-width: 3px;
+    font-size: 5px;
+    height: 10px;
+}
+.idoso {
+    font-size: 30px;
+    height: 40px;
+}
+/*pesquisa aq*/
+.search-box {
+    margin-left: 600px  ;
+    margin-top: 50px;
+
+    background-color: #fff;
+    height: 50px;
+    width: 350px;
+    border-radius: 40px;
+    padding: 10px;
+
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.search-text {
+    border: none;
+    outline: 0;
+    width: 290px;
+    font-size: 16px;
+    margin-left: 4px;
+    margin-bottom: 3px;
+}
+.pesquisa {
+    background-color: rgb(149, 220, 255)  ;
+    border: none;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+    border-radius: 50%;
+}

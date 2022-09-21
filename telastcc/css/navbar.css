@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+    
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #b9d8ff;
+}
+/*nav inteira*/
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #34abeb;
+    padding: 20px 14px;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width: 350px;
+}
+.sidebar .logo_content .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
+
+}
+/* tamanho icone logo */
+.logo_content .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+.nav_list i {
+    font-size: 20px;
+}
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+}
+.sidebar #bnt{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 6px;
+    left: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+.sidebar.active #bnt{
+    left: 90%;
+}
+.sidebar ul{
+    margin-top: 20px;
+}
+.sidebar ul li{
+    position: relative;
+    height: 50px;
+    width:100%;
+    margin: 0 5px ;
+    list-style: none;
+    line-height: 50px;
+    text-transform: uppercase;
+
+}
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translateY(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+.sidebar.active ul li{
+    display: block;
+}
+/*.tooltip#cadremed {
+    height: 300px;
+}*/
+
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background: #1d1b31;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover{
+color: #11101d;
+background: #fff;
+}
+
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: #278fc7;
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details img{
+    height: 45px;
+    width: 45px; 
+    object-fit: cover;
+    border-radius: 12px;
+}
+.profile .profile_details{
+    margin-left: 10px;
+}
+.profile .profile_details .name{
+    font-size: 15px;
+    font-weight: 400;
+}
+.profile #log_out{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    opacity: 1;
+}
+.sidebar.active .profile #log_out{
+
+    left: 88%;
+}
+
+
+
+.sidebar .links_name {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+.sidebar.active .links_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar .profile_details a{
+    color: #11101d;
+    text-decoration: none;
+    color: inherit;
+}
+.profile a {
+        
+        color: aliceblue;}
+
+        a {
+            all: unset;
+            cursor: pointer;
+}
+.profile a:hover{
+    color: #11101d;
+    background: #fff;
+    }
+
+    #cadlinha {
+        width: 200px;
+    }
+
+    .sidebar.active .tooltip{
+        display: none;
+    }

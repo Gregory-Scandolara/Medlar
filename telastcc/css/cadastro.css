@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+  }
+
+  body {
+    background-color: #AECAEF;
+    background-size: cover;
+    /* background-position-x: 850px;
+    background-position-y: 100px; */
+    margin-left: 170px;
+    /* wrap=  "hard"; */
+}
+
+a:hover {
+    color: royalblue;
+}
+#cad-conteiner {
+    background-color: #72cdfe;
+    display: flex;
+    width: 1200px;
+    height: 550px;
+    border-radius: 10px;
+    margin-left: 40px;
+    /* margin-top: 2vh; */
+}
+.idoso{
+    /* background-color: green; */
+    margin-left: 10px;
+
+}
+
+.idoso1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 400px;
+    height: 580px;
+    padding: 20px 70px;
+margin-left: 0px;
+padding-right: 10px;
+/* background: blue; */
+}
+.idoso2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+/* background-color: red; */
+    width: 400px;
+    padding: 20px 70px;
+    text-align: left;
+    padding-right: 5px;
+    margin-right: 30px;
+}
+
+.resp{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    /* background-color: pink; */
+    padding: 20px 70px;
+    margin-right: 10px;
+    text-align: left;
+    padding-right: 40px;
+}
+#cad-conteiners {
+    background-color: #72cdfe;
+    height: 430px;
+    width: 600px;
+    margin-right: auto;
+    padding: 10px 30px;
+    margin-top: 15vh;
+    margin-left: 20%;
+    border-radius: 10px;
+    text-align: justify;
+}
+.radio {
+    /* background-color: #fff; */
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 5px;
+}
+#botao {
+    margin-top: 30px;
+}
+/*input{
+     width: 50px; */
+/* }*/
+/* .titulo{
+    
+    border-radius: 10px;
+    display: flex;
+} 
+#titulo1, #titulo2 {
+    background-color: aquamarine;
+}*/
+.titulo {
+    background-color: rgb(19, 165, 214);
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+}
+#titulo2 {
+    background-color: #72cdfe;
+    margin-left: 40px;
+    width: 1200px;
+   /*display: inline-block;
+    float:left;
+ margin-left: 00px; */
+}
+#cad-conteiner3 {
+   /* background-color: rgb(99, 149, 240);*/
+    background-color: #72cdfe;
+    height: 470px;
+    width: 580px;
+    margin-right: auto;
+    padding: 10px 30px;
+    margin-top: 15vh;
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: justify;
+}
+label{
+    
+    width: 90%;
+    text-align: left;
+    font-weight: bold;
+    padding-top: 10px;
+}
+/* input[type="submit"] {
+    margin-top: 15px;
+    background:    #0000ff;
+border-radius: 12px;
+padding:       10px 35px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal bold 26px/1 "Open Sans", sans-serif;
+text-align:    center;
+     } */
+     form#1 {
+        margin-top: -10px;
+        margin-bottom: 50px;
+        margin-left: 40px;
+     }/*arrumar id dos formularios*/
+     form#2 {
+        margin-top: 60px;
+        margin-bottom: 50px;
+        margin-left: 40px;
+     }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+	body{
+		all: unset;
+		background-color: #b9d8ff;
+	}
+</style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <i class='bx bx-plus-medical'></i>
+                <div class="logo_name">MedLar</div>
+            </div>
+            <i class="bx bx-menu" id="bnt" ></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                 <a href="listaidosos.php">
+                    <i class='bx bxs-user'></i>
+                <span class="links_name">Lista Idosos</span>
+                </a>
+                <span class="tooltip">Lista</span>
+            </li>    
+            
+            <li>
+                <a href="cadastro_idoso.php">
+                    <i class='bx bx-user-plus' ></i>
+                <span class="links_name">Cadastro de Idosos</span>
+                </a>
+                <span class="tooltip">Cadastro de Idosos</span>
+            </li>            <li>
+                <a href="cadastro_remed.php">
+                    <i class='bx bxs-capsule'></i>
+                <span id="cadremed" class="links_name">Cadastro de Medicamentos</span>
+                </a>
+                <span id="cadlinha" class="tooltip">Cadastro de Medicamentos</span>
+            </li>  
+            <li> 
+                <a href="cadastro_estoque.php">
+                    <i class='bx bxs-cart-download' ></i></i>                <span class="links_name">Cadastro Estoque</span>
+                </a>
+                <span id="cadlinha" class="tooltip">Cadastro de Estoque</span>
+             </li>          <li>
+                <a href="estoque.php">
+                    <i class='bx bx-box'></i>
+                <span class="links_name">Estoque</span>
+                </a>
+                <span class="tooltip">Estoque</span>
+            </li>           
+                         <!-- <li>
+                 <a href="#"> -->
+                    <!-- <i class='bx bxs-store-alt'></i>                <span class="links_name">Saved</span> -->
+                <!-- </a> -->
+                <!-- <span class="tooltip">Dashboard</span> -->
+            <!-- </li>            <li> -->
+                <!-- <a href="#"> -->
+                    <!-- <i class='bx bx-book-content'></i> -->
+                <!-- <span class="links_name">Settings</span> -->
+                <!-- </a> -->
+                <!-- <span class="tooltip">Dashboard</span> -->
+            <!-- </li> -->
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                   <img src="img/fundo.jpg" alt=""></div>
+                   <a href="login.php">
+                <i class='bx bx-log-out' id="log_out"></i></a>
+            </div>
+        </div>
+
+        <script>
+            let bnt = document.querySelector("#bnt");
+            let sidebar = document.querySelector(".sidebar");
+
+            bnt.onclick = function() {
+                sidebar.classList.toggle("active");
+            }
+
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+body {
+    background-color: #AECAEF;
+    background-size: cover;
+    margin-top: 7vh;
+    margin-left: 50;
+}
+
+.tabela-conteiner {
+    background-color: #fff;
+    margin-left: 120px;
+   display: flex;
+   border-radius: 10px;
+}
+/* dado do idoso */
+.um {
+    width: 550px;
+    margin-left: 18px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+
+}
+/* dado do responsavel */
+.dois {
+    width: 550px;
+    margin-left: 40px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+
+}
+/* tamanho da tabela */
+td.pergunta {
+    width: 300px;
+}
+/* configurações dos botoes */
+.botoes {
+    margin-top: 75px;
+    border-radius: 12px;
+    position: fixed;
+    align-items: center;
+    color: inherit;
+    left: 93%;
+    
+    
+}
+.botao {
+    padding-left: 8px;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+a#cadastro {
+    margin-top: 20px;
+}
+
+/* configurações do "dadomedidoso" */
+.remedio {
+        background-color: #72cdfe;
+        height: 550px;
+        width: 850px;
+        margin-left: auto;
+        margin-right: 200px;
+        padding: 20px 30px;
+        overflow:auto; 
+        margin-top: 10vh;
+        border-radius: 10px;
+        
+}
+
+.tabela-conteiner {
+    margin-right: 200px;
+}
+
+/* css recebe idoso */
+
+#recebeidoso {
+    width: 600px;
+    margin-left: 40px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+#receberesp {
+    width: 600px;
+    margin-left: 40px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.titulo {
+    background-color: rgb(19, 165, 214);
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 150px;
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+}
+/*
+.tabela-conteiner#1 {
+    display: flex;
+}
+
+.remedio {
+    opacity: 1;
+    width: 700px;
+    margin-left: 10px;
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }*/

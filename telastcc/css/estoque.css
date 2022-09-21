@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;}
+
+    body {
+        background-color: #b9d8ff;
+        background-size: cover;
+        background-position-x: 700px;
+        background-position-y: 50px;
+       
+    }
+    textarea:focus, input:focus {
+        outline: none;
+    }
+    /* botaozinho */
+    a:hover {
+        color: royalblue;
+    
+    }
+    #lista-conteiner {
+        background-color: #72cdfe;
+        height: 550px;
+        width: 900px;
+        margin-left: auto;
+        margin-right: 15%;
+        padding: 20px 30px;
+        overflow:auto; 
+        margin-top: 10vh;
+        border-radius: 10px;
+        
+        
+    }#lista-estoque {
+        background-color: #72cdfe;
+        height: 550px;
+        width: 850px;
+        margin-left: auto;
+        margin-right: 200px;
+        padding: 20px 30px;
+        overflow:auto; 
+        margin-top: 10vh;
+        border-radius: 10px;
+        
+    }
+    a {
+    font-weight: bold;
+    cursor: pointer;
+    }
+    td, th {
+        border-width: medium;
+        border-style: solid;
+        border-color: rgb(57, 166, 233);
+        /* border-radius: 10px; */
+        text-align: center;
+        font-size: 20px;
+    }
+    /* tamanho do nome dos idosos */
+    td.texto, th.texto {
+        width: 200px;
+        height: 40px;
+    }
+    
+    td.text-center, th.text-center {
+        width: 30px;
+        height: 20px;
+        
+    }
+    
+    td.id, th.id {
+        width: 30px;
+        height: 20px;
+    }
+    
+    /* tamanho dos icones da lista */
+    .text-center i {
+        font-size: 25px;
+        margin-top: 7px;
+    }
+    thead{
+    background-color: #2ca0ff;
+}
+    #cadastro {
+        width: 20px;
+    }
