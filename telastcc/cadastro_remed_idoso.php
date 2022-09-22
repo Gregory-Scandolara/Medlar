@@ -20,13 +20,14 @@
         $idremedio = $_POST['idremedio'];
         $posologia = $_POST['posologia'];
         $periodo = $_POST['periodo'];
+        $horario = $_POST['horario'];
         $obs = $_POST['obs'];
 
-        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, periodo, obs)
-        VALUES ('$ididoso', '$idremedio', $posologia, '$periodo', '$obs')";
+        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, periodo, obs)
+        VALUES ('$ididoso', '$idremedio', $posologia, $horario, '$periodo', '$obs')";
 
         mysqli_query($con, $sql);
-        // echo $sql;
+        echo $sql;
         mysqli_close($con);
     } else {
 
@@ -35,7 +36,7 @@
         <title>Cadastro Medicamentos</title>
         </h2>
         <div id="cad-conteiner3">
-            <form action="recebemedicamento.php" method="POST">
+            <form action="cadastro_remed_idoso.php" method="POST">
                 <label>Medicamento: <select class='form-control' name="idremedio"></label>
                 <option>Selecione</option>
                 <?php $sql = "select * from medicamentos ";
@@ -46,7 +47,7 @@
                     </option>
                 <?php } ?>
                 </select>
-                <label>Horario: <select class='form-control'></label>
+                <label>Horario: <select class='form-control' name="horario"></label>
                 <option>Selecione</option>
 
                 <option value="00">00hrs</option>

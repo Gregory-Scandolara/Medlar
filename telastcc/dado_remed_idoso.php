@@ -26,8 +26,9 @@
 
                 <tr>
                     <th class="texto">Nome do Remedio: </th>
-                    <th class="text-center">Periodo</th>
                     <th class="texto">Dosagem</th>
+                    <th class="texto">horario</th>
+                    <th class="text-center">Periodo</th>
                     <th class="texto">Observaçôes</th>
                 </tr>
 
@@ -38,9 +39,10 @@
 
                     <tr>
                         <td> <?php echo $linha['nome_remed'];; ?></td>
-                        <td> <?php echo $linha['periodo']; ?></td>
                         <td> <?php echo $linha['dosagem']; ?></td>
-                        <td> <?php echo $linha['obs']; ?></td>
+                        <td> <?php echo $linha['horario']; ?></td>
+                        <td> <?php echo $linha['periodo']; ?></td>
+                        <td> <?php echo $linha['obs']; ?></td> <?php /*problema aq na obs */ ?>
                         <td>
                             <div class="botao"><a id="cadastro" style=" padding: 25; width: 10px; height: 10px" class='btn btn-danger btn-sm' href='deletaremedidoso.php?idutiliza=<?php echo $linha['idutiliza']; ?>'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />

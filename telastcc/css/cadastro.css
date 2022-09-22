@@ -23,7 +23,7 @@ a:hover {
     width: 1200px;
     height: 550px;
     border-radius: 10px;
-    margin-left: 40px;
+    margin-left: 16%;
     /* margin-top: 2vh; */
 }
 .idoso{
@@ -121,7 +121,7 @@ padding-right: 10px;
     margin-right: auto;
     padding: 10px 30px;
     margin-top: 15vh;
-    margin-left: 10px;
+    margin-left: 15%;
     border-radius: 10px;
     text-align: justify;
 }

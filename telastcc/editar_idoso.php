@@ -40,27 +40,26 @@
                 nome_idoso='$nome_idoso', 
                 nascimento='$nascimento', 
                 genero='$genero',
-                alergia='$alergia' 
-				comorbidade='$comorbidade' 
-				obs='$obs' 
-			<?php /*	numerosus='$numerosus'  
-				planosaude='$planosaude' */ ?>
-				cpf='$cpf'
-				nomeresp='$nomeresp' 
-				telefoneresp='$telefoneresp' 
-				cpf_resp='$cpf_resp' 
-				parentesco='$parentesco' 
-				enderecoresp='$enderecoresp' 
+                alergia='$alergia' ,
+				comorbidade='$comorbidade' ,
+				obs='$obs' ,
+				cpf='$cpf',
+				nome_resp='$nomeresp' ,
+				telefone_resp='$telefoneresp' ,
+				cpf_resp='$cpf_resp' ,
+				parentesco='$parentesco' ,
+				endereco_resp='$enderecoresp' 
             WHERE ididoso='$ididoso'";
 
         mysqli_query($con, $sql);
-
-        if (mysqli_affected_rows($con) > 0) {
-            echo "<script> alert('Usuário alterado com sucesso.') </script>";
-            header("Location: listaUsuarios.php");
-        } else {
-            echo "<script> alert('Ocorreu algum erro.') </script>";
-        }
+        header('Location: dadoidoso.php?ididoso='.$ididoso);
+echo $sql;
+        // if (mysqli_affected_rows($con) > 0) {
+        //     echo "<script> alert('Usuário alterado com sucesso.') </script>";
+        //     // header("Location: listaUsuarios.php");
+        // } else {
+        //     echo "<script> alert('Ocorreu algum erro.') </script>";
+        // }
     }
     $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
     $rs = mysqli_query($con, $sql);
@@ -75,7 +74,7 @@
     <div id="cad-conteiner">
         <div class="idoso">
 
-            <form action="editaridoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
+            <form action="editar_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
 
                 <div class="idoso1">
 
@@ -128,11 +127,22 @@
             <label>Telefone</label><br><input class='form-control' value="<?php echo $linha['telefone_resp']; ?>" type="text" name="telefoneresp">
             <label>Grau de Parentesco</label><input class='form-control' value="<?php echo $linha['parentesco']; ?>" type="text" name="parentesco">
             <label>Endereço</label><br><input class='form-control' value="<?php echo $linha['endereco_resp']; ?>" type="text" name="enderecoresp">
-            <input id="botao" class='btn btn-success' type="submit" value="Enviar" name="editar" />
+            <input id="botao"  onclick="myFunction()" class='btn btn-success' type="submit" value="Enviar" name="editar" />
             <input id="botao" class='btn btn-info' type="reset" value="Limpar campos" />
             </form>
         </div>
     </div>
+    <script>
+function myFunction() {
+  let text = "Press a button!\nEither OK or Cancel.";
+  if (confirm(text) == true) {
+    text = "You pressed OK!";
+  } else {
+    text = "You canceled!";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
 </body>
 
 </html>
