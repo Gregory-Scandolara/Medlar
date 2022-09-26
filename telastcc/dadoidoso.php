@@ -11,7 +11,7 @@
 <body>
     <?php
     include('navbar.html');
-    include("bootstrap.html");
+
     include('conexao.php');
 
     $ididoso = $_GET['ididoso'];

@@ -3,19 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <!--  -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/cadastro.css">
 </head>
 
 <body>
     <?php
     include('conexao.php');
+    include('navbar.html');
 
     $ididoso = $_GET['ididoso'];
 
@@ -52,8 +46,8 @@
             WHERE ididoso='$ididoso'";
 
         mysqli_query($con, $sql);
-        header('Location: dadoidoso.php?ididoso='.$ididoso);
-echo $sql;
+        header('Location: dadoidoso.php?ididoso=' . $ididoso);
+        echo $sql;
         // if (mysqli_affected_rows($con) > 0) {
         //     echo "<script> alert('Usuário alterado com sucesso.') </script>";
         //     // header("Location: listaUsuarios.php");
@@ -127,22 +121,22 @@ echo $sql;
             <label>Telefone</label><br><input class='form-control' value="<?php echo $linha['telefone_resp']; ?>" type="text" name="telefoneresp">
             <label>Grau de Parentesco</label><input class='form-control' value="<?php echo $linha['parentesco']; ?>" type="text" name="parentesco">
             <label>Endereço</label><br><input class='form-control' value="<?php echo $linha['endereco_resp']; ?>" type="text" name="enderecoresp">
-            <input id="botao"  onclick="myFunction()" class='btn btn-success' type="submit" value="Enviar" name="editar" />
+            <input id="botao" onclick="myFunction()" class='btn btn-success' type="submit" value="Enviar" name="editar" />
             <input id="botao" class='btn btn-info' type="reset" value="Limpar campos" />
             </form>
         </div>
     </div>
     <script>
-function myFunction() {
-  let text = "Press a button!\nEither OK or Cancel.";
-  if (confirm(text) == true) {
-    text = "You pressed OK!";
-  } else {
-    text = "You canceled!";
-  }
-  document.getElementById("demo").innerHTML = text;
-}
-</script>
+        function myFunction() {
+            let text = "Press a button!\nEither OK or Cancel.";
+            if (confirm(text) == true) {
+                text = "You pressed OK!";
+            } else {
+                text = "You canceled!";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
 </body>
 
 </html>

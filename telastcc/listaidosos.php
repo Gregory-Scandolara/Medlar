@@ -9,16 +9,16 @@
 </head>
 
 <body>
-    <form action="listaidoso.php" name="pesquisa_idoso">
+    <form action="listaidosos.php" name="pesquisa_idoso">
         <div class="search-box">
             <input type="text" class="search-text" placeholder="pesquisar nome" name="pesquisa_idoso">
             <button class="pesquisa"><i style="padding-top: 7px; padding-left: 2px; width: 50px; height: 20px" class='bx bx-search'></i></button>
         </div>
     </form>
     <?php include("navbar.html");
-    //include("bootstrap.html");
     ?>
     <div id="lista-conteiner">
+
         <table id="table" class="table table-striped table-primary">
             <thead class="thead">
                 <tr>
@@ -27,7 +27,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php
                 include("conexao.php");
                 if (isset($_GET['pesquisa_idoso'])) {
@@ -57,8 +56,6 @@
                 } ?>
 
     </div>
-    </tbody>
-    </table>
 </body>
 
 </html>

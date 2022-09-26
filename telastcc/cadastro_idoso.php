@@ -10,7 +10,7 @@
 
 <body>
     <?php include("navbar.html");
-    include("bootstrap.html"); ?>
+    ?>
     <title>Cadastro Idosos</title>
     <div id="titulo1" class="titulo">
         <h2>Cadastro do Idoso</h2>

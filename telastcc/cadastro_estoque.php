@@ -11,7 +11,6 @@
 <body>
     <?php
     include("navbar.html");
-    include("bootstrap.html");
     include("conexao.php");
     if (isset($_POST['btnSalvar'])) {
         $idremedio = $_POST['idremedio'];

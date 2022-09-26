@@ -10,7 +10,7 @@ body{
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-color: #b9d8ff;
+    /* background-color: #b9d8ff; */
 }
 /*nav inteira*/
 .sidebar{

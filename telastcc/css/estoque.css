@@ -5,7 +5,7 @@
     font-family: Helvetica;}
 
     body {
-        background-color: #b9d8ff;
+        /* background-color: #b9d8ff; */
         background-size: cover;
         background-position-x: 700px;
         background-position-y: 50px;
@@ -20,7 +20,7 @@
     
     }
     #lista-conteiner {
-        background-color: #72cdfe;
+        background-color: #5bb2ff;
         height: 550px;
         width: 900px;
         margin-left: auto;
@@ -32,7 +32,7 @@
         
         
     }#lista-estoque {
-        background-color: #72cdfe;
+        background-color: #5bb2ff;
         height: 550px;
         width: 850px;
         margin-left: auto;

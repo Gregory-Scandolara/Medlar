@@ -5,7 +5,7 @@
     font-family: "Poppins" , sans-serif;
 }
 body {
-    background-color: #b9d8ff;
+    background-color: #72cdfe;
     background-size: cover;
     background-position-x: 700px;
     background-position-y: 50px;
@@ -20,15 +20,16 @@ a:hover {
 
 }
 #lista-conteiner {
-    background-color: #72cdfe;
+    background-color: #5bb2ff;
     height: 550px;
     width: 850px;
     margin-left: auto;
     margin-right: 200px;
     padding: 20px 30px;
     overflow:auto; 
-    margin-top: 10px;
+    margin-top: 50px;
     border-radius: 10px;
+    text-transform: uppercase;
     
 }
 a {
@@ -43,9 +44,6 @@ td, th {
     text-align: left;
     font-size: x-large;
 
-}
-#table {
-    border-radius: 10px;
 }
 
 /* tamanho do nome dos idosos */
@@ -106,15 +104,14 @@ thead{
 }
 /*pesquisa aq*/
 .search-box {
-    margin-left: 600px  ;
-    margin-top: 50px;
-
+    margin-left: 600px ;
+    /* margin-bottom: 15px; */
     background-color: #fff;
     height: 50px;
     width: 350px;
     border-radius: 40px;
     padding: 10px;
-
+margin-top: 20px;
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -129,7 +126,7 @@ thead{
     margin-bottom: 3px;
 }
 .pesquisa {
-    background-color: rgb(149, 220, 255)  ;
+    background-color: rgb(112, 206, 253)  ;
     border: none;
     display: flex;
     width: 30px;

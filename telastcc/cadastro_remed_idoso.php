@@ -10,9 +10,9 @@
 
 <body>
     <?php
-    include("navbar.html");
-    include("bootstrap.html");
     include("conexao.php");
+    include("navbar.html");
+
     $ididoso = $_GET['ididoso'];;
 
     if (isset($_POST['btnSalvar'])) {
@@ -24,59 +24,64 @@
         $obs = $_POST['obs'];
 
         $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, periodo, obs)
-        VALUES ('$ididoso', '$idremedio', $posologia, $horario, '$periodo', '$obs')";
-
-        mysqli_query($con, $sql);
+        VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$periodo', '$obs')";
         echo $sql;
-        mysqli_close($con);
+        mysqli_query($con, $sql);
+        header('Location: dadoidoso.php?ididoso=' . $ididoso);
     } else {
 
-        "SELECT * FROM idosos WHERE ididoso=$ididoso";
+        $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
+        $rs = mysqli_query($con, $sql);
+        $linha = mysqli_fetch_array($rs);
     ?>
         <title>Cadastro Medicamentos</title>
         </h2>
         <div id="cad-conteiner3">
-            <form action="cadastro_remed_idoso.php" method="POST">
+            <form action="cadastro_remed_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
                 <label>Medicamento: <select class='form-control' name="idremedio"></label>
                 <option>Selecione</option>
+
                 <?php $sql = "select * from medicamentos ";
                 $rs = mysqli_query($con, $sql);
                 while ($linha = mysqli_fetch_array($rs)) { ?>
+
                     <option value=<?php echo $linha['idremedio'] ?>>
                         <?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem']; ?>
                     </option>
+
                 <?php } ?>
                 </select>
-                <label>Horario: <select class='form-control' name="horario"></label>
+
+                <label>Horario: </label><input type="time" class='form-control' name="horario">
+                <!-- 
                 <option>Selecione</option>
+                <option value="00:00:00">00hrs</option>
+                <option value="01:00:00">01hrs</option>
+                <option value="02:00:00">02hrs</option>
+                <option value="03:00:00">03hrs</option>
+                <option value="04:00:00">04hrs</option>
+                <option value="05:00:00">05hrs</option>
+                <option value="06:00:00">06hrs</option>
+                <option value="07:00:00">07hrs</option>
+                <option value="08:00:00">08hrs</option>
+                <option value="09:00:00">09hrs</option>
+                <option value="10:00:00">10hrs</option>
+                <option value="11:00:00">11hrs</option>
+                <option value="12:00:00">12hrs</option>
+                <option value="13:00:00">13hrs</option>
+                <option value="14:00:00">14rs</option>
+                <option value="15:00:00">15hrs</option>
+                <option value="16:00:00">16hrs</option>
+                <option value="17:00:00">17hrs</option>
+                <option value="18:00:00">18hrs</option>
+                <option value="19:00:00">19hrs</option>
+                <option value="20:00:00">20hrs</option>
+                <option value="21:00:00">21hrs</option>
+                <option value="22:00:00">22hrs</option>
+                <option value="23:00:00">23hrs</option>
 
-                <option value="00">00hrs</option>
-                <option value="01">01hrs</option>
-                <option value="02">02hrs</option>
-                <option value="03">03hrs</option>
-                <option value="04">04hrs</option>
-                <option value="05">05hrs</option>
-                <option value="06">06hrs</option>
-                <option value="07">07hrs</option>
-                <option value="08">08hrs</option>
-                <option value="09">09hrs</option>
-                <option value="10">10hrs</option>
-                <option value="11">11hrs</option>
-                <option value="12">12hrs</option>
-                <option value="13">13hrs</option>
-                <option value="14">14rs</option>
-                <option value="15">15hrs</option>
-                <option value="16">16hrs</option>
-                <option value="17">17hrs</option>
-                <option value="18">18hrs</option>
-                <option value="19">19hrs</option>
-                <option value="20">20hrs</option>
-                <option value="21">21hrs</option>
-                <option value="22">22hrs</option>
-                <option value="23">23hrs</option>
 
-
-                </select><BR>
+                </select><BR> -->
                 <label>Posologia Diaria:</label> <input class='form-control' type="text" name="posologia">
                 <!-- <label>Data inicial:</label> <input type="date" name="datainicial"><br>
 			<label>Data fim:</label> <input type="date" name="datafinal"><br> -->
