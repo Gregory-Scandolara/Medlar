@@ -11,7 +11,7 @@
 <body>
     <?php
     include("conexao.php");
-    include("navbar.html");
+
 
     $ididoso = $_GET['ididoso'];;
 
@@ -19,17 +19,18 @@
         $ididoso = $_POST['ididoso'];
         $idremedio = $_POST['idremedio'];
         $posologia = $_POST['posologia'];
-        $periodo = $_POST['periodo'];
+        $data_inicio = $_POST['data_inicio'];
+        $data_fim = $_POST['data_fim'];
         $horario = $_POST['horario'];
         $obs = $_POST['obs'];
 
-        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, periodo, obs)
-        VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$periodo', '$obs')";
+        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, data_inicio, data_fim, obs)
+        VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$data_inicio','$data_fim', '$obs')";
         echo $sql;
         mysqli_query($con, $sql);
         header('Location: dadoidoso.php?ididoso=' . $ididoso);
     } else {
-
+        include("navbar.html");
         $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
         $rs = mysqli_query($con, $sql);
         $linha = mysqli_fetch_array($rs);
@@ -85,7 +86,8 @@
                 <label>Posologia Diaria:</label> <input class='form-control' type="text" name="posologia">
                 <!-- <label>Data inicial:</label> <input type="date" name="datainicial"><br>
 			<label>Data fim:</label> <input type="date" name="datafinal"><br> -->
-                <label>Periodo(dias):</label><input class='form-control' type="text" name="periodo">
+                <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
+                <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
                 <label>Observações:</label> <input class='form-control' type="text" name="obs"><br><br>
                 <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
                 <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />

@@ -16,14 +16,11 @@
     if (isset($_POST['editar'])) {
         $nome_idoso = $_POST['nome_idoso'];
         $nascimento = $_POST['nascimento'];
-        // $enfermeira = $_POST['enfermeira'];
         $genero = $_POST['genero'];
         $alergia = $_POST['alergia'];
         $comorbidade = $_POST['comorbidade'];
         $obs = $_POST['obs'];
-        // $numerosus = $_POST['numerosus'];
         $cpf = $_POST['cpf'];
-        // $planosaude = $_POST['planosaude'];
         $nomeresp = $_POST['nomeresp'];
         $telefoneresp = $_POST['telefoneresp'];
         $cpf_resp = $_POST['cpf_resp'];

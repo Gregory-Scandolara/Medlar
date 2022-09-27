@@ -9,63 +9,85 @@
 </head>
 
 <body>
-    <?php include("navbar.html");
+    <?php
+    include('conexao.php');
+    if (isset($_POST['btnSalvar'])) {
+        $nome_idoso = $_POST['nome_idoso'];
+        $nascimento = $_POST['nascimento'];
+        $genero = $_POST['genero'];
+        $alergia = $_POST['alergia'];
+        $comorbidade = $_POST['comorbidade'];
+        $obs = $_POST['obs'];
+        $cpf = $_POST['cpf'];
+        $nomeresp = $_POST['nomeresp'];
+        $telefoneresp = $_POST['telefoneresp'];
+        $cpf_resp = $_POST['cpf_resp'];
+        $parentesco = $_POST['parentesco'];
+        $enderecoresp = $_POST['enderecoresp'];
+
+        $sql = "INSERT INTO idosos (nome_idoso, nascimento, genero, alergia, comorbidade, obs, cpf, nome_resp, telefone_resp, cpf_resp, parentesco, endereco_resp) 
+        VALUES ('$nome_idoso', '$nascimento', '$genero', '$alergia', '$comorbidade',  '$obs', '$cpf', '$nomeresp', '$telefoneresp', '$cpf_resp', '$parentesco', '$enderecoresp')";
+        mysqli_query($con, $sql);
+        header('Location: listaidosos.php');
+    } else {
+        include('navbar.html');
     ?>
-    <title>Cadastro Idosos</title>
-    <div id="titulo1" class="titulo">
-        <h2>Cadastro do Idoso</h2>
-    </div>
-    <div id="cad-conteiner">
-        <div class="idoso">
-            <form action="recebeidoso.php" method="POST">
-                <div class="idoso1">
 
-
-                    <label>Nome do Idoso</label> <input class='form-control' type="text" name="nome">
-
-                    <label>Data de Nascimento</label><br> <input class='form-control' type="date" size="25" placeholder="__/__/____" name="nascimento">
-
-                    <label>Numero do CPF</label> <br><input class='form-control' type="text" name="cpf">
-
-                    <label>Genero:</label><br>
-                    <div class="radio">
-                        <input type="radio" name="genero" value="F">F
-                    </div>
-                    <div class="radio">
-                        <input type="radio" name="genero" value="M">M
-                    </div>
-                    <div class="radio">
-                        <input type="radio" name="genero" value="O">O
-                    </div>
-
-
-                </div>
+        <title>Cadastro Idosos</title>
+        <div id="titulo1" class="titulo">
+            <h2>Cadastro do Idoso</h2>
         </div>
-        <div class="idoso2">
-            <label>Alergias</label><br> <input class='form-control' type="text" name="alergia">
+        <div id="cad-conteiner">
+            <div class="idoso">
+                <form action="cadastro_idoso.php" method="POST">
+                    <div class="idoso1">
 
-            <label>Comorbidades</label> <input class='form-control' type="text" name="comorbidade">
 
-            <label>Observaçôes</label> <textarea class='form-control' type="textarea " name="obs"></textarea>
+                        <label>Nome do Idoso</label> <input class='form-control' type="text" name="nome_idoso">
 
-        </div>
+                        <label>Data de Nascimento</label><br> <input class='form-control' type="date" size="25" placeholder="__/__/____" name="nascimento">
 
-        <div class="resp">
-            <label>Nome do Responsavel:</label><input class='form-control' type="text" name="nomeresp">
+                        <label>Numero do CPF</label> <br><input class='form-control' type="text" name="cpf">
 
-            <label>CPF do Responsavel</label><input class='form-control' type="text" name="cpf_resp">
+                        <label>Genero:</label><br>
+                        <div class="radio">
+                            <input type="radio" name="genero" value="F">F
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="genero" value="M">M
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="genero" value="O">O
+                        </div>
 
-            <label>Telefone</label><br><input class='form-control' type="text" name="telefoneresp">
 
-            <label>Grau de Parentesco</label><input class='form-control' type="text" name="parentesco">
+                    </div>
+            </div>
+            <div class="idoso2">
+                <label>Alergias</label><br> <input class='form-control' type="text" name="alergia">
 
-            <label>Endereço</label><br><input class='form-control' type="text" name="enderecoresp">
+                <label>Comorbidades</label> <input class='form-control' type="text" name="comorbidade">
 
-            <input id="botao" class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
-            <input id="botao" class='btn btn-info' type="reset" value="Limpar campos" />
-            </form>
-        </div>
-    </div>
+                <label>Observaçôes</label> <textarea class='form-control' type="textarea " name="obs"></textarea>
+
+            </div>
+
+            <div class="resp">
+                <label>Nome do Responsavel:</label><input class='form-control' type="text" name="nomeresp">
+
+                <label>CPF do Responsavel</label><input class='form-control' type="text" name="cpf_resp">
+
+                <label>Telefone</label><br><input class='form-control' type="text" name="telefoneresp">
+
+                <label>Grau de Parentesco</label><input class='form-control' type="text" name="parentesco">
+
+                <label>Endereço</label><br><input class='form-control' type="text" name="enderecoresp">
+
+                <input id="botao" class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
+                <input id="botao" class='btn btn-info' type="reset" value="Limpar campos" />
+                </form>
+            </div>
+        </div> <?php } ?>
 </body>
 
 </html>
