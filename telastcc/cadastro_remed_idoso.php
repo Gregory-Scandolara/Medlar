@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div id="titulo1" class="titulo">
+        <h2>Cadastro do Remedio para o Paciente</h2>
+    </div>
     <?php
     include("conexao.php");
 
@@ -22,22 +25,25 @@
         $data_inicio = $_POST['data_inicio'];
         $data_fim = $_POST['data_fim'];
         $horario = $_POST['horario'];
-        $obs = $_POST['obs'];
+        $obs_remed_idoso = $_POST['obs_remed_idoso'];
 
-        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, data_inicio, data_fim, obs)
-        VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$data_inicio','$data_fim', '$obs')";
+        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, data_inicio, data_fim, obs_remed_idoso)
+        VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$data_inicio','$data_fim', '$obs_remed_idoso')";
         echo $sql;
         mysqli_query($con, $sql);
-        header('Location: dadoidoso.php?ididoso=' . $ididoso);
+        //header('Location: dadoidoso.php?ididoso=' . $ididoso);
     } else {
         include("navbar.html");
         $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
         $rs = mysqli_query($con, $sql);
         $linha = mysqli_fetch_array($rs);
     ?>
+
+
+
         <title>Cadastro Medicamentos</title>
         </h2>
-        <div id="cad-conteiner3">
+        <div id="cad-remed-idoso-conteiner">
             <form action="cadastro_remed_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
                 <label>Medicamento: <select class='form-control' name="idremedio"></label>
                 <option>Selecione</option>
@@ -53,42 +59,13 @@
                 <?php } ?>
                 </select>
 
-                <label>Horario: </label><input type="time" class='form-control' name="horario">
-                <!-- 
-                <option>Selecione</option>
-                <option value="00:00:00">00hrs</option>
-                <option value="01:00:00">01hrs</option>
-                <option value="02:00:00">02hrs</option>
-                <option value="03:00:00">03hrs</option>
-                <option value="04:00:00">04hrs</option>
-                <option value="05:00:00">05hrs</option>
-                <option value="06:00:00">06hrs</option>
-                <option value="07:00:00">07hrs</option>
-                <option value="08:00:00">08hrs</option>
-                <option value="09:00:00">09hrs</option>
-                <option value="10:00:00">10hrs</option>
-                <option value="11:00:00">11hrs</option>
-                <option value="12:00:00">12hrs</option>
-                <option value="13:00:00">13hrs</option>
-                <option value="14:00:00">14rs</option>
-                <option value="15:00:00">15hrs</option>
-                <option value="16:00:00">16hrs</option>
-                <option value="17:00:00">17hrs</option>
-                <option value="18:00:00">18hrs</option>
-                <option value="19:00:00">19hrs</option>
-                <option value="20:00:00">20hrs</option>
-                <option value="21:00:00">21hrs</option>
-                <option value="22:00:00">22hrs</option>
-                <option value="23:00:00">23hrs</option>
-
-
-                </select><BR> -->
-                <label>Posologia Diaria:</label> <input class='form-control' type="text" name="posologia">
+                <label>Horario: </label><input type="time"  step="1" class='form-control' name="horario">
+                <label>Posologia:</label> <input class='form-control' type="text" name="posologia">
                 <!-- <label>Data inicial:</label> <input type="date" name="datainicial"><br>
 			<label>Data fim:</label> <input type="date" name="datafinal"><br> -->
                 <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
                 <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
-                <label>Observações:</label> <input class='form-control' type="text" name="obs"><br><br>
+                <label>Observações:</label> <input class='form-control' type="text" name="obs_remed_idoso"><br><br>
                 <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
                 <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
                 <input class='btn btn-info' type="reset" value="Limpar campos" />

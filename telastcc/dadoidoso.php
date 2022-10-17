@@ -59,29 +59,28 @@
         </div>
         <div class="tabela-conteiner">
             <div class="um">
-                <?php /* echo $linha['nome_idoso']; */ ?>
-                <table class="table table-info table-bordered">
-                    <thead>
-                        <td class="pergunta"> <?php echo 'nome '; ?></td>
-                        <td> <?php echo $linha['nome_idoso']; ?></tr>
+                <table class="table table-primary table-bordered">
 
-                        <td class="pergunta"> <?php echo 'Data de Nascimento '; ?></td>
-                        <td> <?php echo date_format(date_create($linha['nascimento']), "d/m/Y"); ?></tr>
+                    <td class="pergunta"> <?php echo 'Paciente '; ?></td>
+                    <td> <?php echo $linha['nome_idoso']; ?></tr>
 
-                        <td class="pergunta"> <?php echo 'CPF do paciente '; ?></td>
-                        <td> <?php echo $linha['cpf']; ?></tr>
+                    <td class="pergunta"> <?php echo 'Data de Nascimento '; ?></td>
+                    <td> <?php echo date_format(date_create($linha['nascimento']), "d/m/Y"); ?></tr>
 
-                        <td class="pergunta"> <?php echo 'Genero '; ?></td>
-                        <td> <?php echo $genero; ?></tr>
+                    <td class="pergunta"> <?php echo 'CPF do paciente '; ?></td>
+                    <td> <?php echo $linha['cpf']; ?></tr>
 
-                        <td class="pergunta"> <?php echo 'Alergias '; ?></td>
-                        <td> <?php echo $linha['alergia']; ?></tr>
+                    <td class="pergunta"> <?php echo 'Genero '; ?></td>
+                    <td> <?php echo $genero; ?></tr>
 
-                        <td class="pergunta"> <?php echo 'Comorbidades '; ?></td>
-                        <td> <?php echo $linha['comorbidade']; ?></tr>
+                    <td class="pergunta"> <?php echo 'Alergias '; ?></td>
+                    <td> <?php echo $linha['alergia']; ?></tr>
 
-                        <td class="pergunta"> <?php echo 'Observações '; ?></td>
-                        <td> <?php echo $linha['obs']; ?></tr>
+                    <td class="pergunta"> <?php echo 'Comorbidades '; ?></td>
+                    <td> <?php echo $linha['comorbidade']; ?></tr>
+
+                    <td class="pergunta"> <?php echo 'Observações '; ?></td>
+                    <td> <?php echo $linha['obs_idoso']; ?></tr>
                 </table>
             </div>
             <div class="dois">

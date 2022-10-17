@@ -17,14 +17,14 @@
 a:hover {
     color: royalblue;
 }
-#cad-conteiner {
+#cad-idoso-conteiner {
     background-color: #5bb2ff;
     display: flex;
-    width: 1200px;
-    height: 550px;
+    width: 80%;
+    height: 75%;
     border-radius: 10px;
     margin-left: 16%;
-    /* margin-top: 2vh; */
+     margin-top: 1%; 
 }
 .idoso{
     /* background-color: green; */
@@ -64,14 +64,19 @@ padding-right: 10px;
     text-align: left;
     padding-right: 40px;
 }
-#cad-conteiners {
+
+
+
+
+
+#cad-remed-conteiner {
     background-color: #5bb2ff;
-    height: 430px;
-    width: 600px;
+    height: 60%;
+    width: 40%;
     margin-right: auto;
     padding: 10px 30px;
     margin-top: 15vh;
-    margin-left: 20%;
+    margin-left: 35%;
     border-radius: 10px;
     text-align: justify;
 }
@@ -84,26 +89,16 @@ padding-right: 10px;
 #botao {
     margin-top: 30px;
 }
-/*input{
-     width: 50px; */
-/* }*/
-/* .titulo{
-    
+#cad-estoque-conteiner{
+    background-color: #5bb2ff;
+    height: 430px;
+    width: 600px;
+    margin-right: auto;
+    padding: 10px 30px;
+    margin-top: 15vh;
+    margin-left: 32%;
     border-radius: 10px;
-    display: flex;
-} 
-#titulo1, #titulo2 {
-    background-color: aquamarine;
-}*/
-.titulo {
-    background-color: rgb(19, 165, 214);
-    border-radius: 10px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-left: 100px;
-    width: 300px;
-    text-align: center;
-    display: inline-block;
+    text-align: justify;
 }
 #titulo2 {
     background-color: #5bb2ff;
@@ -113,15 +108,15 @@ padding-right: 10px;
     float:left;
  margin-left: 00px; */
 }
-#cad-conteiner3 {
+#cad-remed-idoso-conteiner {
    /* background-color: rgb(99, 149, 240);*/
     background-color: #5bb2ff;
     height: 540px;
     width: 580px;
     margin-right: auto;
     padding: 10px 30px;
-    margin-top: 15vh;
-    margin-left: 15%;
+    margin-top: 5vh;
+    margin-left: 40%;
     border-radius: 10px;
     text-align: justify;
 }

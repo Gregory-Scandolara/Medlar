@@ -11,7 +11,7 @@
 <body>
     <div id="login-conteiner">
         <h1>Login</h1>
-        <form method="POST" action="checagem_teste.php">
+        <form method="POST" action="checagem.php">
             <label for="login">Login</label>
             <input type="login" name="login" id="login" placeholder="" autocomplete="off">
             <label for="password">Senha</label>

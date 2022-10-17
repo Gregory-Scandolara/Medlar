@@ -15,21 +15,9 @@
     $ididoso = $_GET['ididoso'];
 
     if (isset($_POST['editar'])) {
-        $nome_idoso = $_POST['nome_idoso'];
-        $nascimento = $_POST['nascimento'];
-        // $enfermeira = $_POST['enfermeira'];
-        $genero = $_POST['genero'];
-        $alergia = $_POST['alergia'];
-        $comorbidade = $_POST['comorbidade'];
-        $obs = $_POST['obs'];
-        // $numerosus = $_POST['numerosus'];
-        $cpf = $_POST['cpf'];
-        // $planosaude = $_POST['planosaude'];
-        $nomeresp = $_POST['nomeresp'];
-        $telefoneresp = $_POST['telefoneresp'];
-        $cpf_resp = $_POST['cpf_resp'];
-        $parentesco = $_POST['parentesco'];
-        $enderecoresp = $_POST['enderecoresp'];
+        $idremedio = $_POST['idremedio'];
+        $quant_caixa = $_POST['quant_caixa'];;
+        $unid_caixa = $_POST['unid_caixa'];
 
         $sql = "UPDATE idosos SET 
                 nome_idoso='$nome_idoso', 
@@ -37,7 +25,7 @@
                 genero='$genero',
                 alergia='$alergia' ,
 				comorbidade='$comorbidade' ,
-				obs='$obs' ,
+				obs_estoque='$obs_estoque' ,
 				cpf='$cpf',
 				nome_resp='$nomeresp' ,
 				telefone_resp='$telefoneresp' ,

@@ -17,7 +17,7 @@
         $genero = $_POST['genero'];
         $alergia = $_POST['alergia'];
         $comorbidade = $_POST['comorbidade'];
-        $obs = $_POST['obs'];
+        $obs_idoso = $_POST['obs_idoso'];
         $cpf = $_POST['cpf'];
         $nomeresp = $_POST['nomeresp'];
         $telefoneresp = $_POST['telefoneresp'];
@@ -25,8 +25,8 @@
         $parentesco = $_POST['parentesco'];
         $enderecoresp = $_POST['enderecoresp'];
 
-        $sql = "INSERT INTO idosos (nome_idoso, nascimento, genero, alergia, comorbidade, obs, cpf, nome_resp, telefone_resp, cpf_resp, parentesco, endereco_resp) 
-        VALUES ('$nome_idoso', '$nascimento', '$genero', '$alergia', '$comorbidade',  '$obs', '$cpf', '$nomeresp', '$telefoneresp', '$cpf_resp', '$parentesco', '$enderecoresp')";
+        $sql = "INSERT INTO idosos (nome_idoso, nascimento, genero, alergia, comorbidade, obs_idoso, cpf, nome_resp, telefone_resp, cpf_resp, parentesco, endereco_resp) 
+        VALUES ('$nome_idoso', '$nascimento', '$genero', '$alergia', '$comorbidade',  '$obs_idoso', '$cpf', '$nomeresp', '$telefoneresp', '$cpf_resp', '$parentesco', '$enderecoresp')";
         mysqli_query($con, $sql);
         header('Location: listaidosos.php');
     } else {
@@ -37,7 +37,7 @@
         <div id="titulo1" class="titulo">
             <h2>Cadastro do Idoso</h2>
         </div>
-        <div id="cad-conteiner">
+        <div id="cad-idoso-conteiner">
             <div class="idoso">
                 <form action="cadastro_idoso.php" method="POST">
                     <div class="idoso1">
@@ -68,7 +68,7 @@
 
                 <label>Comorbidades</label> <input class='form-control' type="text" name="comorbidade">
 
-                <label>Observaçôes</label> <textarea class='form-control' type="textarea " name="obs"></textarea>
+                <label>Observaçôes</label> <textarea class='form-control' type="textarea " name="obs_idoso"></textarea>
 
             </div>
 

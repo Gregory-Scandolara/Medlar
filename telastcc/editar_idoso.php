@@ -7,9 +7,12 @@
 </head>
 
 <body>
+    <div id="titulo1" class="titulo">
+        <h2>Editar dados do Idoso</h2>
+    </div>
     <?php
     include('conexao.php');
-    include('navbar.html');
+    // include('navbar.html');
 
     $ididoso = $_GET['ididoso'];
 
@@ -19,7 +22,7 @@
         $genero = $_POST['genero'];
         $alergia = $_POST['alergia'];
         $comorbidade = $_POST['comorbidade'];
-        $obs = $_POST['obs'];
+        $obs_idoso = $_POST['obs_idoso'];
         $cpf = $_POST['cpf'];
         $nomeresp = $_POST['nomeresp'];
         $telefoneresp = $_POST['telefoneresp'];
@@ -33,7 +36,7 @@
                 genero='$genero',
                 alergia='$alergia' ,
 				comorbidade='$comorbidade' ,
-				obs='$obs' ,
+				obs_idoso='$obs_idoso' ,
 				cpf='$cpf',
 				nome_resp='$nomeresp' ,
 				telefone_resp='$telefoneresp' ,
@@ -51,6 +54,8 @@
         // } else {
         //     echo "<script> alert('Ocorreu algum erro.') </script>";
         // }
+    } else {
+        include('navbar.html');
     }
     $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
     $rs = mysqli_query($con, $sql);
@@ -62,7 +67,7 @@
 
     include("conexao.php");
     ?>
-    <div id="cad-conteiner">
+    <div id="cad-idoso-conteiner">
         <div class="idoso">
 
             <form action="editar_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
@@ -105,7 +110,7 @@
             <label>Alergias</label><br> <input class='form-control' value="<?php echo $linha['alergia']; ?>" type="text" name="alergia">
             <label>Comorbidades</label> <input class='form-control' value="<?php echo $linha['comorbidade']; ?>" type="text" name="comorbidade">
             <!-- <label>Numero do SUS</label> <input class='form-control' type="text" name="numerosus"> -->
-            <label>Observaçôes</label> <textarea class='form-control' value="<?php echo $linha['obs']; ?>" type="textarea " name="obs"></textarea>
+            <label>Observaçôes</label> <textarea class='form-control' value="<?php echo $linha['obs_idoso']; ?>" type="textarea " name="obs_idoso"></textarea>
 
         </div>
 

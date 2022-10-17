@@ -21,7 +21,7 @@ if (isset($_POST['editar'])) {
     $data_inicio = $_POST['data_inicio'];
     $data_fim = $_POST['data_fim'];
     $horario = $_POST['horario'];
-    $obs = $_POST['obs'];
+    $obs_remed_idoso = $_POST['obs_remed_idoso'];
 
     $sql = "UPDATE utiliza SET 
             ididoso='$ididoso', 
@@ -30,7 +30,7 @@ if (isset($_POST['editar'])) {
             horario='$horario', 
             data_inicio='$data_inicio', 
             data_fim='$data_fim', 
-            obs='$obs'
+            obs_remed_idoso='$obs_remed_idoso'
             WHERE idutiliza='$idutiliza'";
     mysqli_query($con, $sql);
     header("Location: dado_remed_idoso.php?ididoso=" . $ididoso);
@@ -61,7 +61,7 @@ if (isset($_POST['editar'])) {
             <label>Posologia Diaria:</label> <input class='form-control' type="text" name="posologia">
             <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
             <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
-            <label>Observações:</label> <input class='form-control' type="text" name="obs"><br><br>
+            <label>Observações:</label> <input class='form-control' type="text" name="obs_remed_idoso"><br><br>
             <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
             <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
             <input class='btn btn-info' type="reset" value="Limpar campos" />

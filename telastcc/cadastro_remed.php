@@ -9,19 +9,22 @@
 </head>
 
 <body>
+    <div id="titulo1" class="titulo">
+        <h2>Cadastro do Medicamento</h2>
+    </div>
     <?php
     include("navbar.html");
 
     include("conexao.php");
     if (isset($_POST['btnSalvar'])) {
         $nome_remed = $_POST['nomeremed'];
-        $descricao = $_POST['descricao'];
+        
         $dosagem = $_POST['dosagem'];
-        $obs = $_POST['obs'];
+        $obs_remed = $_POST['obs_remed'];
 
 
-        $sql = "INSERT INTO medicamentos (nome_remed, descricao, dosagem, obs)
-					VALUES ('$nome_remed', '$descricao', '$dosagem', '$obs')";
+        $sql = "INSERT INTO medicamentos (nome_remed, descricao, dosagem, obs_remed)
+					VALUES ('$nome_remed', '$descricao', '$dosagem', '$obs_remed')";
 
         mysqli_query($con, $sql);
         //echo $sql;
@@ -31,23 +34,23 @@
 
                 <td> <?php echo 'nome: '; ?></td>
                 <td> <?php echo  $nome_remed; ?></tr>
-                <td> <?php echo 'Descrição: '; ?></td>
-                <td> <?php echo $descricao; ?></tr>
+                
+                
                 <td> <?php echo 'Dosagem: '; ?></td>
                 <td> <?php echo $dosagem; ?></tr>
                 <td> <?php echo 'Observação: '; ?></td>
-                <td> <?php echo $obs; ?></tr>
+                <td> <?php echo $obs_remed; ?></tr>
             </table>
             <a href="cadastro_remed.php">cadastrar outro remedio</a>
         <?php } else {
         ?>
             <title>Cadastro Medicamentos</title>
-            <div id="cad-conteiners">
+            <div id="cad-remed-conteiner">
                 <form id="2" action="cadastro_remed.php" method="POST">
                     <label>Nome</label> <input class='form-control' type="text" name="nomeremed">
-                    <label>Descrição</label> <input class='form-control' type="text" name="descricao">
+                    
                     <label>Dosagem</label> <input class='form-control' type="text" name="dosagem">
-                    <label>Observações</label> <input class='form-control' type="text" name="obs"><br>
+                    <label>Observações</label> <input class='form-control' type="text" name="obs_remed"><br>
                     <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
                     <input class='btn btn-info' type="reset" value="Limpar campos" />
             </div>

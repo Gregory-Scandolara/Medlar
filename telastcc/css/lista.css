@@ -19,15 +19,16 @@ a:hover {
     color: royalblue;
 
 }
-#lista-conteiner {
+#lista-container {
+
     background-color: #5bb2ff;
-    height: 550px;
-    width: 850px;
-    margin-left: auto;
-    margin-right: 200px;
+    height: 77%;
+    width: 60%;
+    margin-left: 25%;
+    margin-right: auto;
     padding: 20px 30px;
     overflow:auto; 
-    margin-top: 50px;
+    margin-top: 1%;
     border-radius: 10px;
     text-transform: uppercase;
     
@@ -104,14 +105,16 @@ thead{
 }
 /*pesquisa aq*/
 .search-box {
-    margin-left: 600px ;
-    /* margin-bottom: 15px; */
+    margin-left: auto ;
+    margin-right: auto;
+    /* margin-top: 1%; */
+margin-bottom: 1%;
     background-color: #fff;
     height: 50px;
     width: 350px;
     border-radius: 40px;
     padding: 10px;
-margin-top: 20px;
+
     justify-content: space-between;
     align-items: center;
     display: flex;
@@ -134,3 +137,23 @@ margin-top: 20px;
     justify-content: space-between;
     border-radius: 50%;
 }
+.thead {
+    /* position: fixed; */
+}
+
+.tbody {
+    position: relative;
+    overflow: auto;
+
+}
+/* .titulo {
+    background-color: rgb(19, 165, 214);
+    border-radius: 10px;
+    margin-top: 25px;
+    /* margin-bottom: 25px; 
+    margin-left: 40%;
+    
+    width: 300px;
+    text-align: center;
+    display: inline-block;
+} */

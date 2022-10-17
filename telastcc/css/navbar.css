@@ -235,3 +235,15 @@ background: #fff;
     .sidebar.active .tooltip{
         display: none;
     }
+    .titulo {
+        background-color: rgb(19, 165, 214);
+        border-radius: 10px;
+        margin-top: 25px;
+        /* margin-bottom: 25px; */
+        margin-left: 40%;
+        padding-left: 10px;
+        padding-right: 10px;
+        /* width: 300px; */
+        text-align: center;
+        display: inline-block;
+    }

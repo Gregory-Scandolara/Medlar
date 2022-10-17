@@ -9,13 +9,62 @@
 </head>
 
 <body>
+
     <?php
     include('conexao.php');
     include('navbar.html');
+    date_default_timezone_set('America/Sao_Paulo');
+    $hoje = date('Y-m-d');
+    echo 'kkkkkkkkkkkkkkkkkkkkkkk' . $hoje;
     $horario = $_GET['horario'];
-    if (isset($_GET['check'])) {
+    ?>
+    <div id="titulo1" class="titulo">
+        <h2>Checagem dos medicamentos do horario: <?= $horario ?></h2>
+    </div>
+
+    <?php
+    if (isset($_POST['check'])) {
         $checagem = $_POST['checagem'];
-        echo 'kkkkkkkkkkkkkkkkkkkkkkkkkkkk' . $checagem;
+        $idutiliza = $_POST['idutiliza'];
+        $idremedio = $_POST['idremedio'];
+        $sql = "UPDATE utiliza SET 
+                 checagem='$checagem' 
+                WHERE idutiliza='$idutiliza'";
+        mysqli_query($con, $sql);
+
+        $sql2 = "select MAX(add_cp) as max_cp from estoque where idremedio = $idremedio";
+        $rs2 = mysqli_query($con, $sql2);
+        $linha2 = mysqli_fetch_array($rs2);
+
+        $max_cp = $linha2['max_cp'];
+        $sub_cp = 1;
+        $util_cp = $max_cp - $sub_cp;
+        $sql3 = "UPDATE estoque SET 
+                 add_cp='$util_cp'
+                 WHERE add_cp = '$max_cp' and idremedio = '$idremedio'";
+        mysqli_query($con, $sql3);
+
+
+        // echo 'kkkkkkkkkkkkkkkkkkkkkkkkkkk' . $util_cp . 'iiii' . $sub_cp . $max_cp;
+        // if (mysqli_affected_rows($con) > 0) {
+        //     echo "Sucesso: Atualizado corretamente!";
+        // } else {
+        //     echo "Aviso: Não foi atualizado!";
+        // }
+    }
+
+    if (isset($_POST['check'])) {
+        $checagem = $_POST['checagem'];
+        $idutiliza = $_POST['idutiliza'];
+        $sql = "UPDATE utiliza SET 
+                checagem='$checagem' 
+                WHERE idutiliza='$idutiliza'";
+        mysqli_query($con, $sql);
+        if (mysqli_affected_rows($con) > 0) {
+            echo "Sucesso: Atualizado corretamente!";
+        } else {
+            echo "Aviso: Não foi atualizado!";
+        }
     }
     ?>
 
@@ -27,29 +76,41 @@
                     <td>Remedio</td>
                     <td>Dosagem</td>
                     <td>Posologia</td>
+                    <td>checagem</td>
                     <td>check</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <?php $sql = "select * from utiliza, idosos, medicamentos where utiliza.ididoso = idosos.ididoso and utiliza.horario = '$horario' and utiliza.idremedio = medicamentos.idremedio";
+                    <?php
+                    $sql = "select * from utiliza, idosos, medicamentos where utiliza.ididoso = idosos.ididoso and utiliza.horario = '$horario' and utiliza.idremedio = medicamentos.idremedio";
                     $rs = mysqli_query($con, $sql);
-                    while ($linha = mysqli_fetch_array($rs)) { ?>
-                        <td colspan="1"><?php echo $linha['nome_idoso']; ?></a>
-                        <td><?php echo $linha['nome_remed'] ?></td>
-                        <td><?php echo $linha['dosagem'] ?></td>
-                        <td><?php echo $linha['posologia'] ?></td>
-                        <td><a href="checagem_remed_idoso.php?checagem=true&horario=<?php echo $horario ?>"><i class='bx bxs-check-square'></i> </a></td>
-                        <td>
-                            <form action="checagem_remed_idoso.php?checagem=true&horario=<?php echo $horario ?>" method="POST">
-                                <button class='btn btn-success' type="submit" name="check"><i class='bx bxs-check-square'></i></button>
+                    while ($linha = mysqli_fetch_array($rs)) {
+                        $color = (strtotime($hoje) == strtotime($linha['checagem'])) ? "green" : "red";
+
+                        //echo 'kkkkkkkkkkkkkkkkk' . $linha['checagem'] . $hoje; 
+                    ?>
+
+                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['nome_idoso']; ?></a>
+                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['nome_remed'] ?></td>
+                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['dosagem'] ?></td>
+                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['posologia'] ?></td>
+                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['checagem'] ?></td>
+                        <!-- <td><a href="checagem_remed_idoso.php?checagem=true&horario=<?php /* echo $horario */ ?>"><i class='bx bxs-check-square'></i> </a></td> -->
+                        <td colspan="1" bgcolor="<?php echo $color ?>">
+                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>?horario=<?php echo $horario ?>" method="POST">
+                                <input type="hidden" name="checagem" value="<?= $hoje ?>">
+                                <input type="hidden" name="idutiliza" value="<?= $linha['idutiliza'] ?>">
+                                <input type="hidden" name="idremedio" value="<?= $linha['idremedio'] ?>">
+                                <!--  <button class='btn btn-success' type="submit" name="check"><i class='bx bxs-check-square'></i></button> -->
+                                <input class='btn btn-success' type="submit" name="check" i class='bx bxs-check-square'>
                             </form>
                         </td>
                 </tr>
             <?php } ?>
             </tbody>
         </table>
-        <h4>obs: minha intenção é fazer o botao do check enviar o valor de verdadeiro, e quando o valor ser verdadeiro o botao vai ficar verde, quando ser falso vai ficar vermelho, e eu usaria esses valores na outra pagina tambem, por exemplo, quando todos os valores de tal horario forem verdadeiros o botao fica verde. <br><br> meu maior problema seria resetar os valores a cada 24 horas. </h4>
+
     </div>
 
 </body>
