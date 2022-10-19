@@ -29,9 +29,9 @@
 
         $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, data_inicio, data_fim, obs_remed_idoso)
         VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$data_inicio','$data_fim', '$obs_remed_idoso')";
-        echo $sql;
         mysqli_query($con, $sql);
-        //header('Location: dadoidoso.php?ididoso=' . $ididoso);
+        header('Location: dadoidoso.php?ididoso=' . $ididoso);
+        // header nao funciona vai toma no cu
     } else {
         include("navbar.html");
         $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
@@ -42,7 +42,6 @@
 
 
         <title>Cadastro Medicamentos</title>
-        </h2>
         <div id="cad-remed-idoso-conteiner">
             <form action="cadastro_remed_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
                 <label>Medicamento: <select class='form-control' name="idremedio"></label>
@@ -59,10 +58,8 @@
                 <?php } ?>
                 </select>
 
-                <label>Horario: </label><input type="time"  step="1" class='form-control' name="horario">
+                <label>Horario: </label><input type="time" step="1" class='form-control' name="horario">
                 <label>Posologia:</label> <input class='form-control' type="text" name="posologia">
-                <!-- <label>Data inicial:</label> <input type="date" name="datainicial"><br>
-			<label>Data fim:</label> <input type="date" name="datafinal"><br> -->
                 <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
                 <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
                 <label>Observações:</label> <input class='form-control' type="text" name="obs_remed_idoso"><br><br>

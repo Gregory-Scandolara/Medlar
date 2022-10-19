@@ -68,7 +68,7 @@
                     <td> <?php echo date_format(date_create($linha['nascimento']), "d/m/Y"); ?></tr>
 
                     <td class="pergunta"> <?php echo 'CPF do paciente '; ?></td>
-                    <td> <?php echo $linha['cpf']; ?></tr>
+                    <td> <?php echo $linha['cpf_idoso']; ?></tr>
 
                     <td class="pergunta"> <?php echo 'Genero '; ?></td>
                     <td> <?php echo $genero; ?></tr>

@@ -35,17 +35,17 @@ if (isset($_POST['editar'])) {
     include("navbar.html");
     $sql = "select * from utiliza, medicamentos where utiliza.idutiliza = '$idutiliza' and utiliza.idremedio = medicamentos.idremedio";
     $rs = mysqli_query($con, $sql);
-    $linha2 = mysqli_fetch_array($rs);
+    $linha = mysqli_fetch_array($rs);
 ?>
     <title>Cadastro Medicamentos</title>
     <div id="cad-remed-idoso-conteiner">
         <form action="editar_remed_idoso.php?idutiliza=<?php echo $idutiliza ?>" method="POST">
-            <label>Medicamento: <strong><?php echo $linha2['nome_remed'] . ' - ' . $linha2['dosagem']; ?></strong> </label>
+            <label>Medicamento: <strong><?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem']; ?></strong> </label>
 
 
-            <?php $sql = "select medicamentos.nome_remed as nome_remed, medicamentos.dosagem as dosagem, utiliza.ididoso as ididoso, utiliza.horario as horario, utiliza.data_inicio as data_inicio, utiliza.data_fim as data_fim, utiliza.posologia as posologia, utiliza.obs_remed_idoso as obs_remed_idoso from medicamentos, utiliza where idutiliza = $idutiliza";
+            <?php $sql = "select medicamentos.nome_remed as nome_remed, medicamentos.dosagem as dosagem, utiliza.horario as horario, utiliza.data_inicio as data_inicio, utiliza.data_fim as data_fim, utiliza.posologia as posologia, utiliza.obs_remed_idoso as obs_remed_idoso from medicamentos, utiliza where idutiliza = $idutiliza";
             $rs = mysqli_query($con, $sql);
-            $linha = mysqli_fetch_array($rs) ?>
+            ($linha = mysqli_fetch_array($rs)) ?>
 
 
 
@@ -59,7 +59,7 @@ if (isset($_POST['editar'])) {
             <label>Data Inicio:</label><input value="<?= $linha['data_inicio'] ?>" class='form-control' type="date" name="data_inicio">
             <label>Data Fim:</label><input value="<?= $linha['data_fim'] ?>" class='form-control' type="date" name="data_fim">
             <label>Observações:</label> <input value="<?= $linha['obs_remed_idoso'] ?>" class='form-control' type="text" name="obs_remed_idoso"><br><br>
-            <input type="hidden" name="ididoso" value="<?php echo $linha['ididoso']; ?>">
+            <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
             <input class='btn btn-success' type="submit" value="Enviar" name="editar" />
             <input class='btn btn-info' type="reset" value="Limpar campos" />
         </form>

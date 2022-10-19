@@ -18,15 +18,15 @@
         $alergia = $_POST['alergia'];
         $comorbidade = $_POST['comorbidade'];
         $obs_idoso = $_POST['obs_idoso'];
-        $cpf = $_POST['cpf'];
+        $cpf_idoso = $_POST['cpf_idoso'];
         $nomeresp = $_POST['nomeresp'];
         $telefoneresp = $_POST['telefoneresp'];
         $cpf_resp = $_POST['cpf_resp'];
         $parentesco = $_POST['parentesco'];
         $enderecoresp = $_POST['enderecoresp'];
 
-        $sql = "INSERT INTO idosos (nome_idoso, nascimento, genero, alergia, comorbidade, obs_idoso, cpf, nome_resp, telefone_resp, cpf_resp, parentesco, endereco_resp) 
-        VALUES ('$nome_idoso', '$nascimento', '$genero', '$alergia', '$comorbidade',  '$obs_idoso', '$cpf', '$nomeresp', '$telefoneresp', '$cpf_resp', '$parentesco', '$enderecoresp')";
+        $sql = "INSERT INTO idosos (nome_idoso, nascimento, genero, alergia, comorbidade, obs_idoso, cpf_idoso, nome_resp, telefone_resp, cpf_resp, parentesco, endereco_resp) 
+        VALUES ('$nome_idoso', '$nascimento', '$genero', '$alergia', '$comorbidade',  '$obs_idoso', '$cpf_idoso', '$nomeresp', '$telefoneresp', '$cpf_resp', '$parentesco', '$enderecoresp')";
         mysqli_query($con, $sql);
         header('Location: listaidosos.php');
     } else {
@@ -49,7 +49,7 @@
 
                         <label>Numero do CPF</label> <br><input class='form-control' type="text" name="cpf">
 
-                        <label>Genero:</label><br>
+                        <label>Genero</label><br>
                         <div class="radio">
                             <input type="radio" name="genero" value="F">F
                         </div>
@@ -73,7 +73,7 @@
             </div>
 
             <div class="resp">
-                <label>Nome do Responsavel:</label><input class='form-control' type="text" name="nomeresp">
+                <label>Nome do Responsavel</label><input class='form-control' type="text" name="nomeresp">
 
                 <label>CPF do Responsavel</label><input class='form-control' type="text" name="cpf_resp">
 
