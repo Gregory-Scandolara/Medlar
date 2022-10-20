@@ -55,11 +55,11 @@
         }
         ?>
         <div id="titulo1" class="titulo">
-            <h2>Dados do Idoso</h2>
+            <h2>DADOS DO IDOSO</h2>
         </div>
         <div class="tabela-conteiner">
             <div class="um">
-                <table class="table table-primary table-bordered">
+                <table class="table table-info table-bordered">
 
                     <td class="pergunta"> <?php echo 'Paciente '; ?></td>
                     <td> <?php echo $linha['nome_idoso']; ?></tr>
@@ -84,7 +84,7 @@
                 </table>
             </div>
             <div class="dois">
-                <table class="table table-primary table-bordered">
+                <table class="table table-info table-bordered">
                     <td class="pergunta"> <?php echo 'Nome do Responsavel '; ?></td>
                     <td> <?php echo $linha['nome_resp']; ?></tr>
                     <td class="pergunta"> <?php echo 'Telefone do Responsavel '; ?></td>

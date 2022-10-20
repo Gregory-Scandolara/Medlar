@@ -1,5 +1,3 @@
-<html>
-
 <head>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -15,46 +13,35 @@
 
 <body>
     <div id="titulo1" class="titulo">
-        <h2>Checagem dos medicamentos</h2>
+        <h2>CHECAGEM DIÁRIA</h2>
     </div>
     <?php include("conexao.php");
     date_default_timezone_set('America/Sao_Paulo');
     $hoje = date('Y/m/d');
     // $horario = $_GET['horario'];
     include("navbar.html"); ?>
-    <div class="conteiner">
+    <div id="um" class="conteiner">
 
-        <table class="table table-primary">
+        <table class="table table-primary table-bordered">
             <thead>
                 <tr>
                     <th class="text-center" colspan="1">Horarios</td>
-                    <th class="text-center" colspan="1">Pacientes</td>
+                    <th class="text-center" colspan="1">Checagem</td>
                 </tr>
             </thead>
             <tr><?php
-               // $sql_c = "select min(checagem) from utiliza WHERE horario = '00:00:00'";
-               // $rs_c = mysqli_query($con, $sql_c);
-                //while ($linha_c = mysqli_fetch_array($rs_c)); {
-
-                //    var_dump($rs_c);
-                    // echo $linha_c['min(checagem'];
-               // }
                 $sql = "select horario, min(checagem) as MenorData from utiliza group by utiliza.horario";
                 $rs = mysqli_query($con, $sql);
                 while ($linha = mysqli_fetch_array($rs)) { ?>
-                    <td class="texto"><?php echo $linha['horario']; ?></td>
+
 
                     <?php
-
-                   // $horario = $linha['horario'];
-                   // $sql_c = "select MIN(checagem) as MenorData from utiliza WHERE horario = '00:00:05'";
-                   // $rs_c = mysqli_query($con, $sql_c);
-                   // $linha_c = mysqli_fetch_array($rs_c);
-
-                      $color = (strtotime($hoje) == strtotime($linha['MenorData'])) ? "green" : "red";
-                  //  echo "resultado: ".$rs_c;
+                    $color = (strtotime($hoje) == strtotime($linha['MenorData'])) ? "#2b9348" : "#db3a34";
                     ?>
-                    <td class="texto" colspan="1" bgcolor="<?php echo $color ?>"><a href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>vermelho</a>
+                    <td class="text-center" bgcolor="<?php echo $color ?>"><?php echo $linha['horario']; ?></td>
+                    <td class="text-center" colspan="1" bgcolor="<?php echo $color ?>"><a href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>CHECK
+                            <i class='bx bx-check-square'></i>
+                        </a>
                     </td>
             </tr> <?php } ?>
 

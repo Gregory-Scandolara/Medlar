@@ -15,10 +15,10 @@
     include('navbar.html');
     date_default_timezone_set('America/Sao_Paulo');
     $hoje = date('Y-m-d');
-    echo 'kkkkkkkkkkkkkkkkkkkkkkk' . $hoje;
+    // echo 'kkkkkkkkkkkkkkkkkkkkkkk' . $hoje;
     $horario = $_GET['horario'];
     ?>
-    <div id="titulo1" class="titulo">
+    <div id="titulo2" class="titulo">
         <h2>Checagem dos medicamentos do horario: <?= $horario ?></h2>
     </div>
 
@@ -53,22 +53,22 @@
         // }
     }
 
-    if (isset($_POST['check'])) {
-        $checagem = $_POST['checagem'];
-        $idutiliza = $_POST['idutiliza'];
-        $sql = "UPDATE utiliza SET 
-                checagem='$checagem' 
-                WHERE idutiliza='$idutiliza'";
-        mysqli_query($con, $sql);
-        if (mysqli_affected_rows($con) > 0) {
-            echo "Sucesso: Atualizado corretamente!";
-        } else {
-            echo "Aviso: Não foi atualizado!";
-        }
-    }
+    // if (isset($_POST['check'])) {
+    //     $checagem = $_POST['checagem'];
+    //     $idutiliza = $_POST['idutiliza'];
+    //     $sql = "UPDATE utiliza SET 
+    //             checagem='$checagem' 
+    //             WHERE idutiliza='$idutiliza'";
+    //     mysqli_query($con, $sql);
+    //     if (mysqli_affected_rows($con) > 0) {
+    //         echo "Sucesso: Atualizado corretamente!";
+    //     } else {
+    //         echo "Aviso: Não foi atualizado!";
+    //     }
+    // }
     ?>
 
-    <div class="conteiner">
+    <div id="dois" class="conteiner">
         <table class="table table-info table-bordered">
             <thead>
                 <tr>
@@ -86,7 +86,7 @@
                     $sql = "select * from utiliza, idosos, medicamentos where utiliza.ididoso = idosos.ididoso and utiliza.horario = '$horario' and utiliza.idremedio = medicamentos.idremedio";
                     $rs = mysqli_query($con, $sql);
                     while ($linha = mysqli_fetch_array($rs)) {
-                        $color = (strtotime($hoje) == strtotime($linha['checagem'])) ? "green" : "red";
+                        $color = (strtotime($hoje) == strtotime($linha['checagem'])) ? "#0ead69" : "#db3a34";
 
                         //echo 'kkkkkkkkkkkkkkkkk' . $linha['checagem'] . $hoje; 
                     ?>

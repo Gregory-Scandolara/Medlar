@@ -62,7 +62,7 @@
                 <label>Posologia:</label> <input class='form-control' type="text" name="posologia">
                 <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
                 <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
-                <label>Observações:</label> <input class='form-control' type="text" name="obs_remed_idoso"><br><br>
+                <label>Observações:</label> <input class='form-control' type="text" name="obs_remed_idoso"><br>
                 <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
                 <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
                 <input class='btn btn-info' type="reset" value="Limpar campos" />

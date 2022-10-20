@@ -10,7 +10,7 @@
 
 <body>
     <div id="titulo1" class="titulo">
-        <h2>Cadastro do Medicamento</h2>
+        <h2>CADASTRO DO MEDICAMENTO</h2>
     </div>
     <?php
 
@@ -30,15 +30,13 @@
         mysqli_close($con);
         header("Location: dado_remed.php");
     ?>
-
-        <a href="cadastro_remed.php">cadastrar outro remedio</a>
     <?php } else {
         include("navbar.html");
     ?>
         <title>Cadastro Medicamentos</title>
         <div id="cad-remed-conteiner">
             <form id="2" action="cadastro_remed.php" method="POST">
-                <label>Nome</label> <input class='form-control' type="text" name="nomeremed">
+                <label>Nome</label> <input class='form-control' type="text" name="nome_remed">
 
                 <label>Dosagem</label> <input class='form-control' type="text" name="dosagem">
                 <label>Observações</label> <input class='form-control' type="text" name="obs_remed"><br>

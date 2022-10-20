@@ -47,15 +47,19 @@
 
         include("conexao.php");
         ?>
-        <title>Cadastro Idosos</title>
+        <div id="titulo1" class="titulo">
+            <h2>EDITAR ESTOQUE</h2>
+        </div>
         <div class='container' id="cad-estoque-conteiner">
             <form action="editar_estoque.php?idremedio=<?php echo $idremedio ?>" method="POST">
-                <br><br>
+
                 <label>Medicamento </label>
                 <?php $sql2 = "select * from medicamentos where idremedio = $idremedio ";
                 $rs2 = mysqli_query($con, $sql2);
                 $linha2 = mysqli_fetch_array($rs2) ?>
-                <?php echo $linha2['nome_remed'] . ' - ' . $linha2['dosagem'] . 'mg'; ?>
+                <div class="campo">
+                    <?php echo $linha2['nome_remed'] . ' - ' . $linha2['dosagem'] . 'mg'; ?>
+                </div>
                 <label>Quantidade de caixas</label> <br><input value="<?php echo $linha['caixas']; ?>" class='form-control' type="text" name="quant_caixa">
                 <label>Quantidade total de comprimidos</label> <br><input value="<?php echo $linha['add_cp']; ?>" class='form-control' type="text" name="add_cp"> <br>
                 <input type="hidden" name="idremedio" value="<?php echo $idremedio ?>">

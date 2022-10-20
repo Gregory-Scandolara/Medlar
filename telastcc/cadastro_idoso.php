@@ -28,6 +28,7 @@
         $sql = "INSERT INTO idosos (nome_idoso, nascimento, genero, alergia, comorbidade, obs_idoso, cpf_idoso, nome_resp, telefone_resp, cpf_resp, parentesco, endereco_resp) 
         VALUES ('$nome_idoso', '$nascimento', '$genero', '$alergia', '$comorbidade',  '$obs_idoso', '$cpf_idoso', '$nomeresp', '$telefoneresp', '$cpf_resp', '$parentesco', '$enderecoresp')";
         mysqli_query($con, $sql);
+        echo $sql;
         header('Location: listaidosos.php');
     } else {
         include('navbar.html');
@@ -35,7 +36,7 @@
 
         <title>Cadastro Idosos</title>
         <div id="titulo1" class="titulo">
-            <h2>Cadastro do Idoso</h2>
+            <h2>CADASTRO DO IDOSO</h2>
         </div>
         <div id="cad-idoso-conteiner">
             <div class="idoso">
@@ -43,13 +44,13 @@
                     <div class="idoso1">
 
 
-                        <label>Nome do Idoso</label> <input class='form-control' type="text" name="nome_idoso">
+                        <label>Nome do idoso</label> <input class='form-control' type="text" name="nome_idoso">
 
-                        <label>Data de Nascimento</label><br> <input class='form-control' type="date" size="25" placeholder="__/__/____" name="nascimento">
+                        <label>Data de nascimento</label><br> <input class='form-control' type="date" size="25" placeholder="__/__/____" name="nascimento">
 
-                        <label>Numero do CPF</label> <br><input class='form-control' type="text" name="cpf">
+                        <label>Número do CPF</label> <br><input class='form-control' type="text" name="cpf_idoso">
 
-                        <label>Genero</label><br>
+                        <label>Gênero</label><br>
                         <div class="radio">
                             <input type="radio" name="genero" value="F">F
                         </div>
@@ -73,13 +74,13 @@
             </div>
 
             <div class="resp">
-                <label>Nome do Responsavel</label><input class='form-control' type="text" name="nomeresp">
+                <label>Nome do responsável</label><input class='form-control' type="text" name="nomeresp">
 
-                <label>CPF do Responsavel</label><input class='form-control' type="text" name="cpf_resp">
+                <label>CPF do responsável</label><input class='form-control' type="text" name="cpf_resp">
 
                 <label>Telefone</label><br><input class='form-control' type="text" name="telefoneresp">
 
-                <label>Grau de Parentesco</label><input class='form-control' type="text" name="parentesco">
+                <label>Grau de parentesco</label><input class='form-control' type="text" name="parentesco">
 
                 <label>Endereço</label><br><input class='form-control' type="text" name="enderecoresp">
 

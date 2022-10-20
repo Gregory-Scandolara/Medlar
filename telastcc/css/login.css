@@ -8,9 +8,10 @@
     border: none;
 }
 body {
-    background-image: url('../img/medlar.jpg');
+    /* background-image: url('../img/fundonovo.png'); */
+    background-color: #CAF0F8;
     background-size: cover;
-    background-position-x: 550px;
+    background-position-x: 40%;
     background-position-y: -30px;
    
 }
@@ -89,4 +90,8 @@ cursor: pointer;
      background-color: #1b223c;
      transition: .5s;
  }
-
+.imagem {
+    position: absolute;
+    bottom: 63%;
+    left: 41%;
+}

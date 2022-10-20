@@ -1,3 +1,6 @@
+#titulo1 {
+    margin-left: 40%;
+}
 *{
     margin: 0;
     padding: 0;
@@ -12,7 +15,10 @@ body {
 }
 
 .tabela-conteiner {
-    background-color: #5bb2ff;
+    border:solid 5px;
+    border-radius:0px 20px 0px 20px;
+    border-color: #fff;
+    background-color: #A8DADC;
     margin-left: 120px;
     margin-top: 2%;
    display: flex;
@@ -50,12 +56,11 @@ td.pergunta {
     
 }
 .botao {
-    padding-left: 8px;
+    /* padding-left: 8px; */
     /* background-color: #fff; */
     border-radius: 10px;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+    
+    /* margin-bottom: 10px; */
 }
 
 a#cadastro {
@@ -64,10 +69,13 @@ a#cadastro {
 
 /* configurações do "dadomedidoso" */
 .remedio {
-        background-color: #5BB2FF;
-        height: 70%;
-        width: 77%;
-        margin-left: 20%;
+    border:solid 5px;
+    border-radius:0px 20px 0px 20px;
+    border-color: #fff;
+        background-color: #A8DADC;
+        max-height: 70%;
+        width: 83%;
+        margin-left: 13%;
         margin-right: 10%;
         padding: 20px 30px;
         overflow:auto; 
@@ -75,6 +83,7 @@ a#cadastro {
         border-radius: 10px;
         
 }
+
 
 .tabela-conteiner {
     margin-right: 200px;
@@ -97,12 +106,16 @@ a#cadastro {
     overflow: hidden;
     border-radius: 12px;
 }
+#med {
+    margin-top: 40px;
+}
 td, th {
     border-width: medium;
     border-style: solid;
-    border-color: rgb(57, 166, 233);
+   
+    /* border-radius: 10px; */
     text-align: left;
-    font-size: large;
+    font-size: x-large;
 
 }
 
@@ -124,5 +137,5 @@ td.id, th.id {
     height: 40px;
 }
 thead{
-    background-color: #2ca0ff;
+    background-color: #457B9D;
 }

@@ -1,3 +1,5 @@
+#titulo1 {
+    margin-left: 30%;}
 *{
     margin: 0;
     padding: 0;
@@ -18,7 +20,10 @@ a:hover {
     color: royalblue;
 }
 #cad-idoso-conteiner {
-    background-color: #5bb2ff;
+    border:solid 5px;
+    border-radius:0px 20px 0px 20px;
+    border-color: #fff;
+    background-color: #82c0cc;
     display: flex;
     width: 80%;
     height: 75%;
@@ -70,13 +75,16 @@ padding-right: 10px;
 
 
 #cad-remed-conteiner {
-    background-color: #5bb2ff;
-    height: 60%;
+     border:solid 5px;
+    border-radius:0px 20px 0px 20px;
+    border-color: #fff;
+    background-color: #82c0cc;
+    height: 50%;
     width: 40%;
     margin-right: auto;
     padding: 10px 30px;
-    margin-top: 15vh;
-    margin-left: 35%;
+    margin-top: 5%;
+    margin-left: 27%;
     border-radius: 10px;
     text-align: justify;
 }
@@ -90,18 +98,22 @@ padding-right: 10px;
     margin-top: 30px;
 }
 #cad-estoque-conteiner{
-    background-color: #5bb2ff;
-    height: 430px;
-    width: 600px;
+    border:solid 5px;
+    border-radius:0px 20px 0px 20px;
+    border-color: #fff;
+    background-color: #82c0cc;
+    height: 50%;
+    width: 40%;
     margin-right: auto;
     padding: 10px 30px;
-    margin-top: 15vh;
-    margin-left: 32%;
+    margin-top: 5%;
+    margin-left: 27%;
     border-radius: 10px;
     text-align: justify;
 }
+
 #titulo2 {
-    background-color: #5bb2ff;
+    background-color: #82c0cc;
     margin-left: 40px;
     width: 1200px;
    /*display: inline-block;
@@ -109,16 +121,19 @@ padding-right: 10px;
  margin-left: 00px; */
 }
 #cad-remed-idoso-conteiner {
+    border:solid 5px;
+    border-radius:0px 20px 0px 20px;
+    border-color: #fff;
    /* background-color: rgb(99, 149, 240);*/
-    background-color: #5bb2ff;
-    height: 540px;
-    width: 580px;
-    margin-right: auto;
-    padding: 10px 30px;
-    margin-top: 5vh;
-    margin-left: 40%;
-    border-radius: 10px;
-    text-align: justify;
+   background-color: #82c0cc;
+   height: 80%;
+   width: 40%;
+   margin-right: auto;
+   padding: 10px 30px;
+   margin-top: 2%;
+   margin-left: 29%;
+   border-radius: 10px;
+   text-align: justify;
 }
 label{
     
@@ -146,4 +161,9 @@ text-align:    center;
         margin-top: 60px;
         margin-bottom: 50px;
         margin-left: 40px;
+     }
+     .campo {
+         background-color: #fff;
+         border-radius: 5px;
+         padding: 7px;
      }

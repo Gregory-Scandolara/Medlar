@@ -1,3 +1,6 @@
+#titulo1 {
+    margin-left: 40%;
+}
 *{
     margin: 0;
     padding: 0;
@@ -32,8 +35,11 @@
         
  } */
     #lista-estoque {
-        background-color: #5bb2ff;
-        height: 70%;
+        border:solid 5px;
+        border-radius:20px 20px 20px 20px;
+        border-color: #fff;
+        background-color: #A8DADC;
+        max-height: 70%;
         width: 70%;
         margin-left: auto;
         margin-right: 200px;
@@ -78,7 +84,7 @@
         margin-top: 7px;
     }
     thead{
-    background-color: #2ca0ff;
+    background-color: #457B9D;
 }
     #cadastro {
         width: 20px;

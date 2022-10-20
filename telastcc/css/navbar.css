@@ -19,7 +19,7 @@ body{
     left: 0;
     height: 100%;
     width: 78px;
-    background: #8F2D56;
+    background: #1D3557;
     padding: 20px 14px;
     transition: all 0.5s ease;
 }
@@ -156,7 +156,7 @@ background: #fff;
     position: relative;
     padding: 10px 6px;
     height: 60px;
-    background: #D81159;
+    background: #457B9D;
 }
 .profile_content .profile .profile_details{
     display: flex;
@@ -236,14 +236,78 @@ background: #fff;
         display: none;
     }
     .titulo {
-        background-color: rgb(19, 165, 214);
+	color: #fff;
+        background-color: #457B9D;
         border-radius: 10px;
         margin-top: 25px;
         /* margin-bottom: 25px; */
-        margin-left: 40%;
+        /* margin-left: 40%; */
         padding-left: 10px;
         padding-right: 10px;
         /* width: 300px; */
         text-align: center;
         display: inline-block;
     }
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: #8f54a0 #ffffff;
+      }
+    
+      /* Chrome, Edge, and Safari */
+      *::-webkit-scrollbar {
+        width: 16px;
+      }
+    
+      *::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+    
+      *::-webkit-scrollbar-thumb {
+        background-color: #457B9D;
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+      }
+    
+      
+.search {
+    width: 100%;
+    position:static   ;
+    display: flex;
+    bottom: 1px;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 15px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 16%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+  }
