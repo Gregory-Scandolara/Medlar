@@ -17,16 +17,16 @@
     include("conexao.php");
 
     if (isset($_POST['btnSalvar'])) {
-        $nome_remed = $_POST['nomeremed'];
+        $nome_remed = $_POST['nome_remed'];
         $dosagem = $_POST['dosagem'];
         $obs_remed = $_POST['obs_remed'];
 
 
-        $sql = "INSERT INTO medicamentos (nome_remed, descricao, dosagem, obs_remed)
+        $sql = "INSERT INTO medicamentos (nome_remed, dosagem, obs_remed)
 					VALUES ('$nome_remed', '$dosagem', '$obs_remed')";
 
         mysqli_query($con, $sql);
-        //echo $sql;
+        echo $sql;
         mysqli_close($con);
         header("Location: dado_remed.php");
     ?>
@@ -39,7 +39,7 @@
                 <label>Nome</label> <input class='form-control' type="text" name="nome_remed">
 
                 <label>Dosagem</label> <input class='form-control' type="text" name="dosagem">
-                <label>Observações</label> <input class='form-control' type="text" name="obs_remed"><br>
+                <label>Observação</label> <input class='form-control' type="text" name="obs_remed"><br>
                 <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
                 <input class='btn btn-info' type="reset" value="Limpar campos" />
         </div>

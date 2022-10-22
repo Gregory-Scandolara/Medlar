@@ -25,18 +25,18 @@
         <table class="table table-primary table-bordered">
             <thead>
                 <tr>
-                    <th class="text-center" colspan="1">Horarios</td>
+                    <th class="text-center" colspan="1">Horários</td>
                     <th class="text-center" colspan="1">Checagem</td>
                 </tr>
             </thead>
             <tr><?php
-                $sql = "select horario, min(checagem) as MenorData from utiliza group by utiliza.horario";
+                $sql = "select horario, min(checagem) as MenorData from utiliza group by utiliza.horario order by horario";
                 $rs = mysqli_query($con, $sql);
                 while ($linha = mysqli_fetch_array($rs)) { ?>
 
 
                     <?php
-                    $color = (strtotime($hoje) == strtotime($linha['MenorData'])) ? "#2b9348" : "#db3a34";
+                    $color = (strtotime($hoje) == strtotime($linha['MenorData'])) ? "#0ead69" : "#db3a34";
                     ?>
                     <td class="text-center" bgcolor="<?php echo $color ?>"><?php echo $linha['horario']; ?></td>
                     <td class="text-center" colspan="1" bgcolor="<?php echo $color ?>"><a href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>CHECK

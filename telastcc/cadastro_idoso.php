@@ -48,7 +48,7 @@
 
                         <label>Data de nascimento</label><br> <input class='form-control' type="date" size="25" placeholder="__/__/____" name="nascimento">
 
-                        <label>Número do CPF</label> <br><input class='form-control' type="text" name="cpf_idoso">
+                        <label>CPF</label> <br><input class='form-control' type="text" name="cpf_idoso">
 
                         <label>Gênero</label><br>
                         <div class="radio">
@@ -69,7 +69,7 @@
 
                 <label>Comorbidades</label> <input class='form-control' type="text" name="comorbidade">
 
-                <label>Observaçôes</label> <textarea class='form-control' type="textarea " name="obs_idoso"></textarea>
+                <label>Observação</label> <textarea class='form-control' type="textarea " name="obs_idoso"></textarea>
 
             </div>
 

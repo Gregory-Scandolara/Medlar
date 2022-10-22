@@ -2,9 +2,9 @@
 
 include('conexao.php');
 
-$idestoque = $_GET['idestoque'];
+$idremedio = $_GET['idremedio'];
 
-$sql = "DELETE FROM estoque WHERE idestoque=$idestoque";
+$sql = "DELETE FROM estoque WHERE idremedio=$idremedio";
 //descobrir forma de excluir os remedios do idoso junto 
 mysqli_query($con, $sql);
 if (mysqli_affected_rows($con) > 0) {

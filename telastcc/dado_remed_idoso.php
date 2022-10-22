@@ -10,13 +10,23 @@
 
 <body>
     <div id="titulo1" class="titulo">
-        <h2>Medicamentos do Paciente</h2>
+        <h2>Medicamentos do paciente</h2>
     </div>
     <?php
 
     include("navbar.html");
 
     include("conexao.php");
+    if (isset($_GET['iddelete'])) {
+        $iddelete = $_GET['iddelete'];
+    ?>
+        <script language="Javascript">
+            var resposta = confirm("Deseja remover esse registro?");
+            if (resposta == true) {
+                window.location.href = "deleta_remed_idoso.php?idutiliza=<?php echo $iddelete ?>";
+            }
+        </script>
+    <?php }
     $ididoso = $_GET['ididoso']; ?>
 
     <!-- <div class="tabela-conteiner"> -->
@@ -29,13 +39,13 @@
             <thead>
 
                 <tr>
-                    <th class="text-center">Nome do Remedio </th>
+                    <th class="text-center">Nome do remédio </th>
                     <th class="texto">Dosagem</th>
                     <th class="texto">Posologia</th>
-                    <th class="texto">horario</th>
+                    <th class="texto">Horário</th>
                     <th colspan="1" class="text-center">Data Inicio</th>
                     <th colspan="1" class="text-center">Data Fim</th>
-                    <th class="texto">Observaçôes</th>
+                    <th class="texto">Observação</th>
                     <th colspan="2" class="text-center">Ação</th>
                 </tr>
             </thead>
@@ -60,7 +70,7 @@
                                 </svg></a></div>
                     </td>
                     <td>
-                        <div class="botao"><a style=" padding: 10" class=' btn btn-danger btn-sm' href='deleta_remed_idoso.php?idutiliza=<?php echo $linha['idutiliza']; ?>'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <div class="botao"><a style=" padding: 10" class=' btn btn-danger btn-sm' href='dado_remed_idoso.php?iddelete=<?php echo $linha['idutiliza']; ?>&ididoso=<?php echo $linha['ididoso']; ?>'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                 </svg></a></div>

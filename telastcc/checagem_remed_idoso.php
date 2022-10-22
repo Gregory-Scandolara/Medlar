@@ -21,53 +21,6 @@
     <div id="titulo2" class="titulo">
         <h2>Checagem dos medicamentos do horario: <?= $horario ?></h2>
     </div>
-
-    <?php
-    if (isset($_POST['check'])) {
-        $checagem = $_POST['checagem'];
-        $idutiliza = $_POST['idutiliza'];
-        $idremedio = $_POST['idremedio'];
-        $sql = "UPDATE utiliza SET 
-                 checagem='$checagem' 
-                WHERE idutiliza='$idutiliza'";
-        mysqli_query($con, $sql);
-
-        $sql2 = "select MAX(add_cp) as max_cp from estoque where idremedio = $idremedio";
-        $rs2 = mysqli_query($con, $sql2);
-        $linha2 = mysqli_fetch_array($rs2);
-
-        $max_cp = $linha2['max_cp'];
-        $sub_cp = 1;
-        $util_cp = $max_cp - $sub_cp;
-        $sql3 = "UPDATE estoque SET 
-                 add_cp='$util_cp'
-                 WHERE add_cp = '$max_cp' and idremedio = '$idremedio'";
-        mysqli_query($con, $sql3);
-
-
-        // echo 'kkkkkkkkkkkkkkkkkkkkkkkkkkk' . $util_cp . 'iiii' . $sub_cp . $max_cp;
-        // if (mysqli_affected_rows($con) > 0) {
-        //     echo "Sucesso: Atualizado corretamente!";
-        // } else {
-        //     echo "Aviso: Não foi atualizado!";
-        // }
-    }
-
-    // if (isset($_POST['check'])) {
-    //     $checagem = $_POST['checagem'];
-    //     $idutiliza = $_POST['idutiliza'];
-    //     $sql = "UPDATE utiliza SET 
-    //             checagem='$checagem' 
-    //             WHERE idutiliza='$idutiliza'";
-    //     mysqli_query($con, $sql);
-    //     if (mysqli_affected_rows($con) > 0) {
-    //         echo "Sucesso: Atualizado corretamente!";
-    //     } else {
-    //         echo "Aviso: Não foi atualizado!";
-    //     }
-    // }
-    ?>
-
     <div id="dois" class="conteiner">
         <table class="table table-info table-bordered">
             <thead>
@@ -94,14 +47,16 @@
                         <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['nome_idoso']; ?></a>
                         <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['nome_remed'] ?></td>
                         <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['dosagem'] ?></td>
-                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['posologia'] ?></td>
+                        <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['posologia'] . 'cp' ?></td>
                         <td colspan="1" bgcolor="<?= $color ?>"><?= $linha['checagem'] ?></td>
                         <!-- <td><a href="checagem_remed_idoso.php?checagem=true&horario=<?php /* echo $horario */ ?>"><i class='bx bxs-check-square'></i> </a></td> -->
                         <td colspan="1" bgcolor="<?php echo $color ?>">
-                            <form action="<?php echo $_SERVER["PHP_SELF"]; ?>?horario=<?php echo $horario ?>" method="POST">
+                            <form action=" func_checagem.php<?php /*echo $_SERVER["PHP_SELF"]; ?>?horario=<?php echo $horario */ ?>" method="POST">
                                 <input type="hidden" name="checagem" value="<?= $hoje ?>">
                                 <input type="hidden" name="idutiliza" value="<?= $linha['idutiliza'] ?>">
                                 <input type="hidden" name="idremedio" value="<?= $linha['idremedio'] ?>">
+                                <input type="hidden" name="posologia" value="<?= $linha['posologia'] ?>">
+                                <input type="hidden" name="horario" value="<?= $linha['horario'] ?>">
                                 <!--  <button class='btn btn-success' type="submit" name="check"><i class='bx bxs-check-square'></i></button> -->
                                 <input class='btn btn-success' type="submit" name="check" i class='bx bxs-check-square'>
                             </form>

@@ -58,7 +58,7 @@
                 $rs2 = mysqli_query($con, $sql2);
                 $linha2 = mysqli_fetch_array($rs2) ?>
                 <div class="campo">
-                    <?php echo $linha2['nome_remed'] . ' - ' . $linha2['dosagem'] . 'mg'; ?>
+                    <?php echo $linha2['nome_remed'] . ' - ' . $linha2['dosagem']; ?>
                 </div>
                 <label>Quantidade de caixas</label> <br><input value="<?php echo $linha['caixas']; ?>" class='form-control' type="text" name="quant_caixa">
                 <label>Quantidade total de comprimidos</label> <br><input value="<?php echo $linha['add_cp']; ?>" class='form-control' type="text" name="add_cp"> <br>

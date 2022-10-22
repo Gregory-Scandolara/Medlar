@@ -17,28 +17,54 @@
     include("conexao.php"); ?>
     <div id="lista-estoque">
         <?php //<h4>devo juntar excluir a tabela estoque e adicionar seus atributos para o medicamentos?</h4> 
+        if (isset($_GET['iddelete'])) {
+            $iddelete = $_GET['iddelete'];
         ?>
-        <table class="table table-info table-striped">
+            <script language="Javascript">
+                var resposta = confirm("Deseja remover esse registro?");
+                if (resposta == true) {
+                    window.location.href = "deleta_estoque.php?idremedio=<?php echo $iddelete ?>";
+                }
+            </script>
+        <?php }
+        ?>
+
+        <form action="estoque.php" name="pesquisa_remed">
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" class="searchTerm" placeholder="Digite o nome do medicamento" name="pesquisa_remed">
+                    <button type="submit" class="searchButton">
+                        <i class='bx bx-search'></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <table id="estoq" class="table table-info table-striped">
             <thead class="thead">
                 <tr>
                     <th class="text-center">Nome</th>
                     <th class="text-center">Dosagem</th>
-                    <th class="text-center">Quantidade de Caixas</th>
-                    <th class="texto">Total de Comprimidos</th>
+                    <th class="text-center">Quantidade de caixas</th>
+                    <th class="text-center">Total de comprimidos</th>
                     <th colspan="4" class="text-center">Ação</th>
                 </tr>
             </thead>
             <tbody>
 
                 <?php
-                $sql = "select medicamentos.idremedio, medicamentos.idremedio,SUM(estoque.add_cp) as add_cp,medicamentos.nome_remed as nome_remed,medicamentos.dosagem,SUM(estoque.caixas) as caixas from estoque, medicamentos where estoque.idremedio = medicamentos.idremedio group by estoque.idremedio";
+                if (isset($_GET['pesquisa_remed'])) {
+                    $pesquisa_remed = "%" . trim($_GET['pesquisa_remed']) . "%";
+                    $sql = "select medicamentos.idremedio, medicamentos.idremedio,SUM(estoque.add_cp) as add_cp,medicamentos.nome_remed as nome_remed,medicamentos.dosagem,SUM(estoque.caixas) as caixas from estoque, medicamentos where estoque.idremedio = medicamentos.idremedio and nome_remed LIKE '$pesquisa_remed' group by estoque.idremedio order by nome_remed";
+                } else {
+                    $sql = "select medicamentos.idremedio, medicamentos.idremedio,SUM(estoque.add_cp) as add_cp,medicamentos.nome_remed as nome_remed,medicamentos.dosagem,SUM(estoque.caixas) as caixas from estoque, medicamentos where estoque.idremedio = medicamentos.idremedio group by estoque.idremedio order by nome_remed";
+                }
                 $rs = mysqli_query($con, $sql);
 
                 while ($linha = mysqli_fetch_array($rs)) { ?>
 
                     <tr>
                         <td class="texto"><?php echo $linha['nome_remed']; ?></td>
-                        <td class="texto"><?php echo $linha['dosagem'] . 'mg'; ?></td>
+                        <td class="texto"><?php echo $linha['dosagem']; ?></td>
                         <td class="texto"><?php echo $linha['caixas']; ?></td>
                         <td class="texto"><?php echo $linha['add_cp'];  ?></td>
 
@@ -48,7 +74,7 @@
                                     </svg></a></div>
                         </td>
                         <td>
-                            <div class="botao"><a id="cadastro" style=" padding: 10;" class='btn btn-danger btn-sm' href='deleta_estoque.php?idremedio=<?php echo $linha['idremedio'] ?>'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                            <div class="botao"><a id="cadastro" style=" padding: 10;" class='btn btn-danger btn-sm' name='btnSalvar' href='estoque.php?iddelete=<?php echo $linha['idremedio'] ?>'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
                                     </svg></a></div>

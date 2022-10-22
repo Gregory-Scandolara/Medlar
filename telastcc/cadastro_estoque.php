@@ -42,7 +42,7 @@
                     $rs = mysqli_query($con, $sql);
                     while ($linha = mysqli_fetch_array($rs)) { ?>
                         <option value=<?php echo $linha['idremedio'] ?>>
-                            <?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem'] . 'mg'; ?>
+                            <?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem']; ?>
                         </option>
                     <?php } ?>
                 </select>

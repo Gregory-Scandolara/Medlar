@@ -3,8 +3,8 @@
 include('conexao.php');
 
 $ididoso = $_GET['ididoso'];
-
-$sql = "DELETE FROM idosos WHERE ididoso=$ididoso";
+$sql = "DELETE FROM utiliza WHERE ididoso=$ididoso";
+$sql2 = "DELETE FROM idosos WHERE ididoso=$ididoso";
 //descobrir forma de excluir os remedios do idoso junto 
 mysqli_query($con, $sql);
 mysqli_query($con, $sql2);

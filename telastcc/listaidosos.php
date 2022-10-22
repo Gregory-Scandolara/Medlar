@@ -20,7 +20,7 @@
         <form action="listaidosos.php" name="pesquisa_idoso">
             <div class="wrap">
                 <div class="search">
-                    <input type="text" class="searchTerm" placeholder="digite o nome do idoso" name="pesquisa_idoso">
+                    <input type="text" class="searchTerm" placeholder="Digite o nome do idoso" name="pesquisa_idoso">
                     <button type="submit" class="searchButton">
                         <i class='bx bx-search'></i>
                     </button>
@@ -40,16 +40,16 @@
                     include("conexao.php");
                     if (isset($_GET['pesquisa_idoso'])) {
                         $pesquisa_idoso = "%" . trim($_GET['pesquisa_idoso']) . "%";
-                        $sql = "SELECT * FROM idosos WHERE nome_idoso LIKE '$pesquisa_idoso'";
+                        $sql = "SELECT * FROM idosos WHERE nome_idoso LIKE '$pesquisa_idoso' order by nome_idoso";
                     } else {
-                        $sql = "select * from idosos";
+                        $sql = "select * from idosos order by nome_idoso";
                     }
                     $rs = mysqli_query($con, $sql);
                     while ($linha = mysqli_fetch_array($rs)) {
                     ?>
 
                         <tr>
-                            <td class="texto"><?php echo $linha['nome_idoso'] ?></td>
+                            <td class="texto botaoo"><?php echo $linha['nome_idoso'] ?></td>
                             <td class="text-center"><a style="width: 50px; height: 40px" class='btn btn-info btn-sm' href='dadoidoso.php?ididoso=<?php echo $linha['ididoso'] ?>'>
                                     <i class='bx bxs-user'></i>
                         </tr>

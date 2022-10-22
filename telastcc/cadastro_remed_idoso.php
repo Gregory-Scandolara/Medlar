@@ -28,10 +28,11 @@
         $obs_remed_idoso = $_POST['obs_remed_idoso'];
 
         $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, data_inicio, data_fim, obs_remed_idoso)
-        VALUES ('$ididoso', '$idremedio', $posologia, '$horario', '$data_inicio','$data_fim', '$obs_remed_idoso')";
+        VALUES ('$ididoso', '$idremedio', '$posologia', '$horario', '$data_inicio','$data_fim', '$obs_remed_idoso')";
         mysqli_query($con, $sql);
+        echo $sql;
         header('Location: dadoidoso.php?ididoso=' . $ididoso);
-        // header nao funciona vai toma no cu
+        
     } else {
         include("navbar.html");
         $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
@@ -58,11 +59,11 @@
                 <?php } ?>
                 </select>
 
-                <label>Horario: </label><input type="time" step="1" class='form-control' name="horario">
-                <label>Posologia:</label> <input class='form-control' type="text" name="posologia">
+                <label>Horário </label><input type="time" step="1" class='form-control' name="horario">
+                <label>Posologia(somente numeros)</label> <input class='form-control' type="text" name="posologia">
                 <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
                 <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
-                <label>Observações:</label> <input class='form-control' type="text" name="obs_remed_idoso"><br>
+                <label>Observações</label> <input class='form-control' type="text" name="obs_remed_idoso"><br>
                 <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
                 <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
                 <input class='btn btn-info' type="reset" value="Limpar campos" />
