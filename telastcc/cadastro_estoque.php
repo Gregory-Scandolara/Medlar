@@ -15,47 +15,57 @@
     <?php
 
     include("conexao.php");
-    if (isset($_POST['btnSalvar'])) {
+
+    /* if (isset($_POST['btnSalvar'])) {
         $idremedio = $_POST['idremedio'];
         $quant_caixa = $_POST['quant_caixa'];;
         $unid_caixa = $_POST['unid_caixa'];
         $add_cp = $quant_caixa * $unid_caixa;
-        $sql = "INSERT INTO estoque (idremedio, caixas, unid_cp, add_cp)
-					VALUES ('$idremedio', '$quant_caixa', '$unid_caixa', '$add_cp')";
+        $sql3 = "select * from medicamentos where idremedio = $idremedio";
+        $rs2 = mysqli_query($con, $sql3);
+        $linha2 = mysqli_fetch_array($rs2);
+        if (isset($linha2['add_cp'])) {
+            $quant_caixa =  $quant_caixa + $linha2['caixas'];
+            $add_cp = $add_cp + $linha2['add_cp'];
+        }
+        $sql = "UPDATE medicamentos SET  caixas='$quant_caixa',unid_cp='$unid_caixa',add_cp='$add_cp' where idremedio = $idremedio";
 
         mysqli_query($con, $sql);
-        //echo $sql;
+        echo $sql;
         mysqli_close($con);
         header('Location: estoque.php');
     ?>
     <?php
-    } else {
-        include("navbar.html");
+    } else {*/
+    $idremedio = $_GET['idremedio'];
+    include("navbar.html");
+
     ?>
-        <title>Cadastro Idosos</title>
-        <div class='container' id="cad-estoque-conteiner">
-            <form action="cadastro_estoque.php" method="POST">
+    <title>Cadastro Idosos</title>
+    <div class='conteiner' id="cad-estoque-conteiner">
 
-                <label>Medicamento</label> <select class='form-control' name="idremedio">
-                    <option>Selecione</option>
-                    <?php $sql = "select * from medicamentos ";
-                    $rs = mysqli_query($con, $sql);
-                    while ($linha = mysqli_fetch_array($rs)) { ?>
-                        <option value=<?php echo $linha['idremedio'] ?>>
-                            <?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem']; ?>
-                        </option>
-                    <?php } ?>
-                </select>
+        <form action="func_estoque.php" method="POST">
 
-                <label>Quantidade de caixas</label> <br><input class='form-control' type="text" name="quant_caixa">
-                <label>Quantidade de remedios em cada caixa</label> <br><input class='form-control' type="text" name="unid_caixa"> <br>
+            <label>Medicamento </label>
+            <?php $sql10 = "select * from medicamentos where idremedio = $idremedio ";
+            $rs10 = mysqli_query($con, $sql10);
+            $linha10 = mysqli_fetch_array($rs10) ?>
+            <div class="campo">
+                <?php echo $linha10['nome_remed'] . ' - ' . $linha10['dosagem']; ?>
+            </div>
+            <? echo $sql10; ?>
 
-                <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
-                <input class='btn btn-info' type="reset" value="Limpar campos" />
-        </div>
+            <label>Quantidade de caixas</label> <br><input class='form-control' type="text" name="quant_caixa">
+            <label>Quantidade de remedios em cada caixa</label> <br><input class='form-control' type="text" name="unid_caixa"> <br>
+            <input type="hidden" value="<?= $idremedio ?>" name="idremedio" />
+            <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
+            <input class='btn btn-info' type="reset" value="Limpar campos" />
+    </div>
 
-        </div>
-    <?php } ?>
+    </div>
+    <?php
+    //}
+    ?>
 </body>
 
 </html>

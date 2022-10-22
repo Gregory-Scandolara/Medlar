@@ -10,15 +10,17 @@ $sql = "UPDATE utiliza SET
             WHERE idutiliza='$idutiliza'";
 mysqli_query($con, $sql);
 
-$sql2 = "select MAX(add_cp) as max_cp from estoque where idremedio = $idremedio";
-$rs2 = mysqli_query($con, $sql2);
-$linha2 = mysqli_fetch_array($rs2);
+$sql = "select add_cp from medicamentos where idremedio = $idremedio";
+echo $sql;
+$rs = mysqli_query($con, $sql);
+$linha = mysqli_fetch_array($rs);
 
-$max_cp = $linha2['max_cp'];
+$add_cp = $linha['add_cp'];
 $sub_cp = $posologia;
-$util_cp = $max_cp - $sub_cp;
-$sql3 = "UPDATE estoque SET 
+//quantidade de comprimidos a serem consumidos
+$util_cp = $add_cp - $sub_cp;
+$sql3 = "UPDATE medicamentos SET 
              add_cp='$util_cp'
-             WHERE add_cp = '$max_cp' and idremedio = '$idremedio'";
+             WHERE add_cp = '$add_cp' and idremedio = '$idremedio'";
 mysqli_query($con, $sql3);
 header('Location: checagem_remed_idoso.php?horario=' . $horario);
