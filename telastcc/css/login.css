@@ -1,3 +1,5 @@
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; */
+/* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css"; */
 *{
     margin: 0;
     padding: 0;
@@ -31,7 +33,7 @@ a:hover {
 
 #login-conteiner {
     background-color: #fff;
-    width: 400px;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
     padding: 20px 30px;
@@ -43,8 +45,8 @@ a:hover {
 
 /* formulario */
 form {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 8%;
+    margin-bottom: 3%;
 }
  label, input {
      display: block;
@@ -92,5 +94,33 @@ cursor: pointer;
 .imagem {
     position: absolute;
     bottom: 63%;
-    left: 41%;
+    left: 42%;
+   
+}
+img {
+    height: 70%;
+    width: 90%;
+}
+
+/* responsividade */
+
+@media (max-device-width: 700px) {
+    
+
+    #login-conteiner {
+        background-color: #fff;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 30px;
+        margin-top: 40vh;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .imagem {
+        position: absolute;
+        bottom: 63%;
+        left: 22%;
+       
+    }
 }

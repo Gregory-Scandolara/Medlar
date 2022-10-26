@@ -38,10 +38,10 @@
         <div id="titulo1" class="titulo">
             <h2>CADASTRO DO IDOSO</h2>
         </div>
-        <div id="cad-idoso-conteiner">
+        <div id="cad-idoso-conteiner" class="columns">
             <div class="idoso">
                 <form action="cadastro_idoso.php" method="POST">
-                    <div class="idoso1">
+                    <div class="idoso1 column">
 
 
                         <label>Nome do idoso</label> <input class='form-control' type="text" name="nome_idoso">
@@ -64,7 +64,7 @@
 
                     </div>
             </div>
-            <div class="idoso2">
+            <div class="idoso2 column">
                 <label>Alergias</label><br> <input class='form-control' type="text" name="alergia">
 
                 <label>Comorbidades</label> <input class='form-control' type="text" name="comorbidade">
@@ -73,7 +73,7 @@
 
             </div>
 
-            <div class="resp">
+            <div class="resp column">
                 <label>Nome do responsável</label><input class='form-control' type="text" name="nomeresp">
 
                 <label>CPF do responsável</label><input class='form-control' type="text" name="cpf_resp">

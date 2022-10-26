@@ -37,7 +37,6 @@
         <div id="cad-remed-conteiner">
             <form id="2" action="cadastro_remed.php" method="POST">
                 <label>Nome</label> <input class='form-control' type="text" name="nome_remed">
-
                 <label>Dosagem</label> <input class='form-control' type="text" name="dosagem">
                 <label>Observação</label> <input class='form-control' type="text" name="obs_remed"><br>
                 <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />

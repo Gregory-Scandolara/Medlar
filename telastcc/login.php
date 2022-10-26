@@ -11,25 +11,22 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['erro'])) {
+        echo "<script> alert('Usuário ou senha incorretos.') </script>";
+    }
+    ?>
     <div class="imagem">
         <img src="img/login.png" alt="">
 
     </div>
     <div id="login-conteiner">
         <h1>Login</h1>
-        <form method="POST" action="checagem.php">
+        <form method="POST" action="sessao.php">
             <label class="label">Username</label>
-            <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="">
-                <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                </span>
-                <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                </span>
-            </div>
+            <input name="user" type="text" placeholder="">
             <label for="password">Senha</label>
-            <input type="password" name="password" placeholder="">
+            <input type="password" name="senha" placeholder="">
             <input type="submit" value="Login">
 
 

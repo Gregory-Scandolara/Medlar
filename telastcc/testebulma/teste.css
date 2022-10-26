@@ -1,0 +1,105 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #323232;
+    border: none;
+}
+body {
+    /* background-image: url('../img/fundonovo.png'); */
+    background-color: #CAF0F8;
+    background-size: cover;
+    background-position-x: 40%;
+    background-position-y: -30px;
+   
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+a, label{
+    font-size: .8rem; /* 16 * .8 = x */
+}
+
+a:hover {
+    color: royalblue;
+}
+
+/* conteiner login */
+
+#login-conteiner {
+    background-color: #fff;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 40vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* formulario */
+form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+ label, input {
+     display: block;
+     width: 100%;
+     text-align: left;
+ }
+
+ label{
+     font-weight: bold;
+ }
+
+ input {
+     border-bottom: 2px solid #323232;
+     padding: 10px;
+     font-size: 1rem;
+     margin-bottom: 20px;
+ }
+
+ input:focus {
+     border-bottom: 2px solid #085588;
+ }
+
+ #forgot-pass {
+     text-align: right;
+     display: block;
+ }
+
+
+ input[type="submit"] {
+text-align: center;
+text-transform: uppercase;
+font-weight: bold;
+border: none;
+border-radius: 20px;
+margin-top: 30px;
+color: #fff;
+background-color: #17a2b8;
+cursor: pointer;
+ }
+ 
+ input[type="submit"]:hover {
+     background-color: #1b223c;
+     transition: .5s;
+ }
+.imagem {
+    position: absolute;
+    bottom: 63%;
+    left: 41%;
+}
+
+.box {
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 300px;
+    height: 300px;
+}

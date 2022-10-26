@@ -19,15 +19,10 @@
         $quant_caixa = $_POST['quant_caixa'];;
         $add_cp = $_POST['add_cp'];
 
-        $sql = "DELETE FROM estoque WHERE idremedio=$idremedio";
+        $sql = "UPDATE medicamentos SET 
+        caixas='$quant_caixa', add_cp='$add_cp'  WHERE idremedio=$idremedio";
 
         mysqli_query($con, $sql);
-
-        $sql2 = "insert into estoque (idremedio, caixas ,unid_cp, add_cp)
-                values ('$idremedio', '$quant_caixa', '0', '$add_cp')";
-
-        mysqli_query($con, $sql2);
-
         header('Location: estoque.php');
         echo $sql2;
         // if (mysqli_affected_rows($con) > 0) {
@@ -37,7 +32,7 @@
         //     echo "<script> alert('Ocorreu algum erro.') </script>";
         // }
     } else {
-        $sql = "SELECT SUM(caixas) as caixas, SUM(add_cp) as add_cp FROM estoque WHERE idremedio=$idremedio";
+        $sql = "SELECT caixas, add_cp FROM medicamentos WHERE idremedio=$idremedio";
         $rs = mysqli_query($con, $sql);
         $linha = mysqli_fetch_array($rs);
     ?>
@@ -50,7 +45,7 @@
         <div id="titulo1" class="titulo">
             <h2>EDITAR ESTOQUE</h2>
         </div>
-        <div class='container' id="cad-estoque-conteiner">
+        <div class='conteiner' id="cad-estoque-conteiner">
             <form action="editar_estoque.php?idremedio=<?php echo $idremedio ?>" method="POST">
 
                 <label>Medicamento </label>

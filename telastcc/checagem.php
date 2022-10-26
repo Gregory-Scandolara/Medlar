@@ -1,3 +1,8 @@
+<?php /*session_start(); 
+
+$_SESSION = 
+ */ ?>
+
 <head>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -22,11 +27,11 @@
     include("navbar.html"); ?>
     <div id="um" class="conteiner">
 
-        <table class="table table-primary table-bordered">
+        <table id="tab" class="table table-primary table-bordered">
             <thead>
                 <tr>
                     <th class="text-center" colspan="1">Horários</td>
-                    <th class="text-center" colspan="1">Checagem</td>
+                    <th id='check' class="text-center" colspan="1">Check</td>
                 </tr>
             </thead>
             <tr><?php
@@ -38,8 +43,8 @@
                     <?php
                     $color = (strtotime($hoje) == strtotime($linha['MenorData'])) ? "#0ead69" : "#db3a34";
                     ?>
-                    <td class="text-center" bgcolor="<?php echo $color ?>"><?php echo $linha['horario']; ?></td>
-                    <td class="text-center" colspan="1" bgcolor="<?php echo $color ?>"><a href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>CHECK
+                    <td id='idoso' class="text-center" bgcolor="<?php echo $color ?>"><?php echo $linha['horario']; ?></td>
+                    <td id='check' class="text-center" colspan="1" bgcolor="<?php echo $color ?>"><a id="btn" class='btn btn-sm' href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>
                             <i class='bx bx-check-square'></i>
                         </a>
                     </td>
