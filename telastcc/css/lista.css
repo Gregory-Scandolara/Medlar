@@ -108,40 +108,7 @@ thead{
     font-size: 30px;
     height: 40px;
 }
-/*pesquisa aq*/
-/*.search-box {
-    margin-left: auto ;
-    margin-right: auto;
-    /* margin-top: 1%; */
-/*margin-bottom: 1%;
-    background-color: #fff;
-    height: 50px;
-    width: 350px;
-    border-radius: 40px;
-    padding: 10px;
 
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-}
- 
-.search-text {
-    border: none;
-    outline: 0;
-    width: 290px;
-    font-size: 16px;
-    margin-left: 4px;
-    margin-bottom: 3px;
-}
-.pesquisa {
-    background-color: rgb(112, 206, 253)  ;
-    border: none;
-    display: flex;
-    width: 30px;
-    height: 30px;
-    justify-content: space-between;
-    border-radius: 50%;
-} */
 .thead {
     /* position: fixed; */
 }
@@ -163,4 +130,72 @@ body{
 }
 #titulo1ri {
     margin-left: 28%;
+}
+
+@media (max-device-width: 700px) {
+    #lista-container {
+        border:solid 5px;
+        border-radius:0px 20px 0px 20px;
+        border-color: #fff;
+        background-color: #A8DADC;
+        height: 77%;
+        width: 73%;
+        margin-left: 25%;
+        margin-right: auto;
+        padding: 20px 30px;
+        overflow:auto; 
+        margin-top: 1%;
+        border-radius: 10px;
+        text-transform: uppercase;
+        
+    }
+    .wrap{
+        width: 30%;
+        position: relative;
+        top: 10px;
+        left: 45%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        
+      }
+    .search {
+        width: 100%;
+        position:static   ;
+        display: flex;
+        bottom: 1px;
+      }
+      
+      .searchTerm {
+        width: 100%;
+        border: 3px solid #00B4CC;
+        border-right: none;
+        padding: 15px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9DBFAF;
+      }
+      
+      .searchTerm:focus{
+        color: #00B4CC;
+      }
+      
+      .searchButton {
+        width: 40px;
+        height: 36px;
+        border: 1px solid #00B4CC;
+        background: #00B4CC;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .table {
+        margin-top: 0,5%;
+        margin-left: 0.5%;
+    }
+    .sidebar.active.wrap {
+        display: none;
+    }
 }

@@ -336,6 +336,6 @@ text-transform: uppercase;
     font-size: 20px;
   }
   
-  @media (max-device-width: 700px) {
+  /* @media (max-device-width: 700px) {
       
-  }
+  } */

@@ -19,6 +19,7 @@ $_SESSION =
 <body>
     <div id="titulo1" class="titulo">
         <h2>CHECAGEM DIÁRIA</h2>
+        <h3>CHECAGEM DIÁRIA</h3>
     </div>
     <?php include("conexao.php");
     date_default_timezone_set('America/Sao_Paulo');
@@ -45,7 +46,12 @@ $_SESSION =
                     ?>
                     <td id='idoso' class="text-center" bgcolor="<?php echo $color ?>"><?php echo $linha['horario']; ?></td>
                     <td id='check' class="text-center" colspan="1" bgcolor="<?php echo $color ?>"><a id="btn" class='btn btn-sm' href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>
-                            <i class='bx bx-check-square'></i>
+                            <div class="row">
+                                <div id="text" class="col">
+                                    <h5>checagem</h5>
+                                </div>
+                                <div id='icone' class="col"><i class='bx bx-check-square'></i></div>
+                            </div>
                         </a>
                     </td>
             </tr> <?php } ?>

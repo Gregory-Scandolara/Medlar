@@ -19,6 +19,7 @@
     $horario = $_GET['horario'];
     ?>
     <div id="titulo2" class="titulo">
+        <h4>Checagem dos medicamentos do horario: <?= $horario ?></h4>
         <h2>Checagem dos medicamentos do horario: <?= $horario ?></h2>
     </div>
     <div id="dois" class="conteiner">
