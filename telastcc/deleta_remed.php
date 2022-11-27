@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include_once('conexao.php');
 $idremedio = $_GET['idremedio'];
 
 $sql = "DELETE FROM medicamentos WHERE idremedio=$idremedio";

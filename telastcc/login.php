@@ -15,6 +15,12 @@
     if (isset($_GET['erro'])) {
         echo "<script> alert('Usuário ou senha incorretos.') </script>";
     }
+    if (isset($_GET['invalid'])) {
+        echo "<script> alert('Faça o login primeiro.') </script>";
+    }
+    if (isset($_GET['final'])) {
+        echo "<script> alert('Sessão finalizada.') </script>";
+    }
     ?>
     <div class="imagem">
         <img src="img/login.png" alt="">
@@ -23,7 +29,7 @@
     <div id="login-conteiner">
         <h1>Login</h1>
         <form method="POST" action="sessao.php">
-            <label class="label">Username</label>
+            <label class="label">Usuario</label>
             <input name="user" type="text" placeholder="">
             <label for="password">Senha</label>
             <input type="password" name="senha" placeholder="">

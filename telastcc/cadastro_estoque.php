@@ -1,3 +1,4 @@
+<?php include_once("restrito.php"); ?>
 <html lang="en">
 
 <head>
@@ -9,36 +10,22 @@
 </head>
 
 <body>
-    <div id="titulo1" class="titulo">
-        <h2>CADASTRO DE ESTOQUE</h2>
+    <div id="titulo_estoque" class="titulo">
+        <div class="titulo_img">
+            <img src="img/titulo.png" alt="">
+        </div>
+        <div class="tit">
+            <h2>CADASTRO DE ESTOQUE</h2>
+            <h5>CADASTRO DE ESTOQUE</h5>
+        </div>
     </div>
     <?php
 
-    include("conexao.php");
+    include_once("conexao.php");
 
-    /* if (isset($_POST['btnSalvar'])) {
-        $idremedio = $_POST['idremedio'];
-        $quant_caixa = $_POST['quant_caixa'];;
-        $unid_caixa = $_POST['unid_caixa'];
-        $add_cp = $quant_caixa * $unid_caixa;
-        $sql3 = "select * from medicamentos where idremedio = $idremedio";
-        $rs2 = mysqli_query($con, $sql3);
-        $linha2 = mysqli_fetch_array($rs2);
-        if (isset($linha2['add_cp'])) {
-            $quant_caixa =  $quant_caixa + $linha2['caixas'];
-            $add_cp = $add_cp + $linha2['add_cp'];
-        }
-        $sql = "UPDATE medicamentos SET  caixas='$quant_caixa',unid_cp='$unid_caixa',add_cp='$add_cp' where idremedio = $idremedio";
 
-        mysqli_query($con, $sql);
-        echo $sql;
-        mysqli_close($con);
-        header('Location: estoque.php');
-    ?>
-    <?php
-    } else {*/
     $idremedio = $_GET['idremedio'];
-    include("navbar.html");
+    include_once("navbar.html");
 
     ?>
     <title>Cadastro Idosos</title>
@@ -56,7 +43,7 @@
             <? echo $sql10; ?>
 
             <label>Quantidade de caixas</label> <br><input class='form-control' type="text" name="quant_caixa">
-            <label>Quantidade de remedios em cada caixa</label> <br><input class='form-control' type="text" name="unid_caixa"> <br>
+            <label>Quantidade de medicamentos em cada caixa</label> <br><input class='form-control' type="text" name="unid_caixa"> <br>
             <input type="hidden" value="<?= $idremedio ?>" name="idremedio" />
             <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
             <input class='btn btn-info' type="reset" value="Limpar campos" />

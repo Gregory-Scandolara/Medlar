@@ -1,6 +1,6 @@
 <?php
 
-include('conexao.php');
+include_once('conexao.php');
 
 $ididoso = $_GET['ididoso'];
 $sql = "DELETE FROM utiliza WHERE ididoso=$ididoso";

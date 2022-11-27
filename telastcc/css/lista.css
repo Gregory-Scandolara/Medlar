@@ -1,5 +1,10 @@
-#titulo1 {
-    margin-left: 45%;
+#titulo_idoso_remed {
+    width: 63%;
+    margin-left: 23.5%;
+}
+#titulo_lista {
+    width: 22.5%;
+    margin-left: 43.5%;
 }
 *{
     margin: 0;
@@ -22,21 +27,24 @@ a:hover {
     color: blue;
 
 }
-#lista-container {
+.lista-container {
     border:solid 5px;
     border-radius:0px 20px 0px 20px;
     border-color: #fff;
     background-color: #A8DADC;
-    height: 77%;
+    /* height: 77%; */
     width: 60%;
     margin-left: 25%;
     margin-right: auto;
-    padding: 20px 30px;
+    padding: 20px 2%;
     overflow:auto; 
     margin-top: 1%;
     border-radius: 10px;
     text-transform: uppercase;
     
+}
+.lista-container#um {
+    height: 77% !important;
 }
 a {
 font-weight: bold;
@@ -82,32 +90,6 @@ thead{
 }
 
 
-.nome, .idoso {
-    /* font-size: 30px; */
-    border-bottom: 1px solid rgb(57, 166, 233);
-    /* border-top: 1px solid rgb(57, 166, 233); */
-    /* border-right: 1px solid rgb(57, 166, 233);
-    border-left: 1px solid rgb(57, 166, 233); */
-    width: 750px;
-    
-    text-align: left;
-    /* padding-top: 5px; */
-    padding-left: 15px;
-    /* border-radius: 10px; */
-    border-width: 3px;
-    margin-left: 3px;
-    display: grid;
-}
-.nome {
-    /* border-top: 1px solid rgb(57, 166, 233); */
-    border-width: 3px;
-    font-size: 5px;
-    height: 10px;
-}
-.idoso {
-    font-size: 30px;
-    height: 40px;
-}
 
 .thead {
     /* position: fixed; */
@@ -118,6 +100,9 @@ thead{
     overflow: auto;
 
 }
+    #bot {
+        width: 50px; height: 40px;
+    }
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
@@ -125,37 +110,50 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
-.table {
-    margin-top: 0,5%;
+table {
+    margin-top: 0 !important ;
+    margin-left: 0.5% !important;
+    padding: 100px !important;
 }
-#titulo1ri {
-    margin-left: 28%;
+
+#sla {
+    display: none;
 }
 
 @media (max-device-width: 700px) {
-    #lista-container {
+    #titulo_lista {
+        width: 60%;
+        margin-left: 33%;
+    }
+    #titulo_idoso_remed {
+        width: 75%;
+        margin-left: 23%;
+    }
+    .lista-container {
         border:solid 5px;
         border-radius:0px 20px 0px 20px;
         border-color: #fff;
         background-color: #A8DADC;
-        height: 77%;
+        /* height: 77%; */
         width: 73%;
         margin-left: 25%;
         margin-right: auto;
-        padding: 20px 30px;
+        padding: 15px 20px;
         overflow:auto; 
-        margin-top: 1%;
+        margin-top: 2%;
         border-radius: 10px;
         text-transform: uppercase;
         
     }
+
     .wrap{
-        width: 30%;
+        padding: 0px 20px;
         position: relative;
         top: 10px;
-        left: 45%;
+        left: 50% !important;
         right: auto;
         transform: translate(-50%, -50%);
+        
         
       }
     .search {
@@ -191,11 +189,20 @@ body{
         cursor: pointer;
         font-size: 20px;
       }
-      .table {
-        margin-top: 0,5%;
-        margin-left: 0.5%;
+      #table {
+        margin-top: 0 !important ;
+        /* margin-left: 0.5%; */
+        /* padding: 100px !important; */
     }
-    .sidebar.active.wrap {
+    #bot {
+        width: 30px; 
+        height: 30px;
+    }
+    #some {
         display: none;
+    }
+    #sla {
+        display: block;
+        color: #000;
     }
 }

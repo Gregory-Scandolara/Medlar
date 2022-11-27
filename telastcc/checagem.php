@@ -1,7 +1,4 @@
-<?php /*session_start(); 
-
-$_SESSION = 
- */ ?>
+<?php include_once("restrito.php"); ?>
 
 <head>
     <!-- Compiled and minified CSS -->
@@ -17,15 +14,21 @@ $_SESSION =
 </head>
 
 <body>
-    <div id="titulo1" class="titulo">
-        <h2>CHECAGEM DIÁRIA</h2>
-        <h3>CHECAGEM DIÁRIA</h3>
+    <div id="titulo_checagem" class="titulo">
+        <div class="titulo_img">
+            <img src="img/titulo.png" alt="">
+        </div>
+        <div class="tit">
+            <h2>CHECAGEM DIÁRIA</h2>
+            <h5>CHECAGEM DIÁRIA</h5>
+        </div>
     </div>
-    <?php include("conexao.php");
+    <?php include_once("conexao.php");
+
     date_default_timezone_set('America/Sao_Paulo');
     $hoje = date('Y/m/d');
     // $horario = $_GET['horario'];
-    include("navbar.html"); ?>
+    include_once("navbar.html"); ?>
     <div id="um" class="conteiner">
 
         <table id="tab" class="table table-primary table-bordered">
@@ -48,7 +51,7 @@ $_SESSION =
                     <td id='check' class="text-center" colspan="1" bgcolor="<?php echo $color ?>"><a id="btn" class='btn btn-sm' href='checagem_remed_idoso.php?horario=<?php echo $linha['horario']; ?> '>
                             <div class="row">
                                 <div id="text" class="col">
-                                    <h5>checagem</h5>
+                                    <p>checagem</p>
                                 </div>
                                 <div id='icone' class="col"><i class='bx bx-check-square'></i></div>
                             </div>

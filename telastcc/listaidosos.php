@@ -1,3 +1,5 @@
+<?php
+include_once("restrito.php"); ?>
 <html lang="en">
 
 <head>
@@ -9,12 +11,20 @@
 </head>
 
 <body>
-    <div id="titulo1" class="titulo">
-        <h2>LISTA DE IDOSOS</h2>
+    <div id="titulo_lista" class="titulo">
+        <div class="titulo_img">
+            <img src="img/titulo.png" alt="">
+        </div>
+        <div class="tit">
+            <h2>LISTA DE IDOSOS</h2>
+            <h5>LISTA DE IDOSOS</h5>
+        </div>
     </div>
     <?php include("navbar.html");
+
+
     ?>
-    <div id="lista-container">
+    <div class="lista-container" id="um">
 
 
         <form action="listaidosos.php" name="pesquisa_idoso">
@@ -31,13 +41,14 @@
             <thead class="thead">
                 <tr>
                     <th class="texto">Nome</th>
-                    <th class="text-center" colspan="2">Dados</th>
+                    <th id="some" class="text-center" colspan="2">Dados</th>
                 </tr>
             </thead>
             <div class="tbody">
                 <tbody>
                     <?php
                     include("conexao.php");
+
                     if (isset($_GET['pesquisa_idoso'])) {
                         $pesquisa_idoso = "%" . trim($_GET['pesquisa_idoso']) . "%";
                         $sql = "SELECT * FROM idosos WHERE nome_idoso LIKE '$pesquisa_idoso' order by nome_idoso";
@@ -49,9 +60,11 @@
                     ?>
 
                         <tr>
-                            <td class="texto botaoo"><?php echo $linha['nome_idoso'] ?></td>
-                            <td class="text-center"><a style="width: 50px; height: 40px" class='btn btn-info btn-sm' href='dadoidoso.php?ididoso=<?php echo $linha['ididoso'] ?>'>
-                                    <i class='bx bxs-user'></i>
+                            <td class="texto botaoo"><a id="sla" href='dadoidoso.php?ididoso=<?php echo $linha['ididoso'] ?>'> <?php echo $linha['nome_idoso'] ?></a>
+                                <p id="some"><?php echo $linha['nome_idoso'] ?></p>
+                            </td>
+                            <td id="some" class="text-center"><a id="bot" style="" class='btn btn-info btn-sm' href='dadoidoso.php?ididoso=<?php echo $linha['ididoso'] ?>'>
+                                    <i class='bx bxs-user'></i></a></td>
                         </tr>
                     <?php }
                     ?>

@@ -1,3 +1,4 @@
+<?php include_once("restrito.php"); ?>
 <html lang="en">
 
 <head>
@@ -9,67 +10,67 @@
 </head>
 
 <body>
-    <div id="titulo1" class="titulo">
-        <h2>Cadastro do Remedio para o Paciente</h2>
-    </div>
+
     <?php
-    include("conexao.php");
+    include_once("conexao.php");
+
 
 
     $ididoso = $_GET['ididoso'];;
 
-    if (isset($_POST['btnSalvar'])) {
-        $ididoso = $_POST['ididoso'];
-        $idremedio = $_POST['idremedio'];
-        $posologia = $_POST['posologia'];
-        $data_inicio = $_POST['data_inicio'];
-        $data_fim = $_POST['data_fim'];
-        $horario = $_POST['horario'];
-        $obs_remed_idoso = $_POST['obs_remed_idoso'];
 
-        $sql = "INSERT INTO utiliza (ididoso, idremedio, posologia, horario, data_inicio, data_fim, obs_remed_idoso)
-        VALUES ('$ididoso', '$idremedio', '$posologia', '$horario', '$data_inicio','$data_fim', '$obs_remed_idoso')";
-        mysqli_query($con, $sql);
-        echo $sql;
-        header('Location: dadoidoso.php?ididoso=' . $ididoso);
-        
-    } else {
-        include("navbar.html");
-        $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
-        $rs = mysqli_query($con, $sql);
-        $linha = mysqli_fetch_array($rs);
+    include_once("navbar.html");
+    $sql = "SELECT * FROM idosos WHERE ididoso=$ididoso";
+    $rs = mysqli_query($con, $sql);
+    $linha = mysqli_fetch_array($rs);
     ?>
-
-
-
-        <title>Cadastro Medicamentos</title>
-        <div id="cad-remed-idoso-conteiner">
-            <form action="cadastro_remed_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
-                <label>Medicamento: <select class='form-control' name="idremedio"></label>
-                <option>Selecione</option>
-
-                <?php $sql = "select * from medicamentos ";
-                $rs = mysqli_query($con, $sql);
-                while ($linha = mysqli_fetch_array($rs)) { ?>
-
-                    <option value=<?php echo $linha['idremedio'] ?>>
-                        <?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem']; ?>
-                    </option>
-
-                <?php } ?>
-                </select>
-
-                <label>Horário </label><input type="time" step="1" class='form-control' name="horario">
-                <label>Posologia(somente numeros)</label> <input class='form-control' type="text" name="posologia">
-                <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
-                <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
-                <label>Observações</label> <input class='form-control' type="text" name="obs_remed_idoso"><br>
-                <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
-                <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
-                <input class='btn btn-info' type="reset" value="Limpar campos" />
-            </form>
+    <div id="titulo_med_idoso" class="titulo">
+        <div class="titulo_img">
+            <img src="img/titulo.png" alt="">
         </div>
-    <?php } ?>
+        <div class="tit">
+            <h2>Cadastro do Medicamento para o Idoso</h2>
+            <h5>Cadastro do Medicamento para o Idoso</h5>
+        </div>
+    </div>
+
+
+    <title>Cadastro Medicamentos</title>
+    <div id="cad-remed-idoso-conteiner">
+        <form action="func_cadastro_remed_idoso.php?ididoso=<?php echo $ididoso ?>" method="POST">
+            <label>Medicamento: <select class='form-control' name="idremedio"></label>
+            <option>Selecione</option>
+
+            <?php $sql = "select * from medicamentos ";
+            $rs = mysqli_query($con, $sql);
+            while ($linha = mysqli_fetch_array($rs)) { ?>
+
+                <option value=<?php echo $linha['idremedio'] ?>>
+                    <?php echo $linha['nome_remed'] . ' - ' . $linha['dosagem']; ?>
+                </option>
+
+            <?php } ?>
+            </select>
+
+            <label>Horário </label><input type="time" step="1" class='form-control' name="horario">
+            <label>Posologia(somente números)</label> <input class='form-control' type="text" <?php /*pattern="[1-2-3-4-5-6-7-8-9-10]"*/ ?>name="posologia">
+            <label>Estoque</label><br>
+            <div class="radio">
+                <input type="radio" name="estoque" value="p">Pessoal
+            </div>
+            <div class="radio">
+                <input type="radio" name="estoque" value="s">SUS
+            </div>
+            <label>Data Inicio:</label><input class='form-control' type="date" name="data_inicio">
+            <label>Data Fim:</label><input class='form-control' type="date" name="data_fim">
+            <!-- <label>Observações</label> <input class='form-control' type="text" name="obs_remed_idoso"><br> -->
+            <input type="hidden" name="ididoso" value="<?php echo $ididoso ?>">
+            <input type="hidden" name="checagem" value="2000-02-20">
+            <input class='btn btn-success' type="submit" value="Enviar" name="btnSalvar" />
+            <input class='btn btn-info' type="reset" value="Limpar campos" />
+        </form>
+    </div>
+
 </body>
 
 </html>

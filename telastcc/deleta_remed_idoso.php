@@ -1,6 +1,6 @@
 <?php
 
-include('conexao.php');
+include_once('conexao.php');
 
 $idutiliza = $_GET['idutiliza'];
 $sql2 = "select * from utiliza where idutiliza=$idutiliza";
@@ -10,7 +10,7 @@ $sql = "DELETE FROM utiliza WHERE idutiliza=$idutiliza";
 
 mysqli_query($con, $sql);
 if (mysqli_affected_rows($con) > 0) {
-    echo "<script>alert('Idosos apagado cm sucesso.');</script>";
+    // echo "<script>alert('Medicamento apagado com sucesso.');</script>";
     // confirm("Press a button!");
 
 } else {

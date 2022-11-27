@@ -1,5 +1,14 @@
 #titulo1 {
-    margin-left: 40%;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    margin-top: 3%;
+    width: 15%;
+}
+#titulo_idoso {
+    margin-left: 37%;
+    margin-bottom: 2%;
+    margin-top: 3%;
+    width: 28%;
 }
 *{
     margin: 0;
@@ -41,8 +50,8 @@
             background-color: #A8DADC;
             max-height: 70%;
             width: 83%;
-            margin-left: 13%;
-            margin-right: 10%;
+            margin-left: 11%;
+            margin-right: 13%;
             padding: 20px 30px;
             overflow:auto; 
             margin-top: 1%;
@@ -91,4 +100,43 @@
     }
     #estoq {
         margin-top: 0,5%;
+    }
+    #botaomodal {
+        display: none;
+    }
+    @media (max-device-width: 700px) {
+        #titulo1 {
+            margin-left: 40%;
+            margin-bottom: 5%;
+            margin-top: 3%;
+            width: 40%;
+        }
+        /* #estoq {
+            width: 80% !important;
+        } */
+        #lista-estoque {
+            border:solid 5px;
+            border-radius:0px 20px 0px 20px;
+            border-color: #fff;
+                background-color: #A8DADC;
+                max-height: 70%;
+                width: 75%;
+                margin-left: 23%;
+                margin-right: 10%;
+                padding: 20px 10px;
+                overflow:auto; 
+                margin-top: 1%;
+                border-radius: 10px;
+                
+        }
+        .wrap{
+            padding-left: 30px;
+            width: 90% !important;
+        
+            
+          }
+          #botaomodal {
+            display: block;
+        }
+          
     }
